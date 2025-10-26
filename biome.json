@@ -1,0 +1,65 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.2.5/schema.json",
+  "files": {
+    "ignoreUnknown": false,
+    "includes": ["**/*.{js,jsx,ts,tsx,json}"],
+    "experimentalScannerIgnores": [
+      "**/node_modules/**",
+      "**/.next/**",
+      "**/dist/**",
+      "**/build/**",
+      "**/coverage/**",
+      "**/playwright-report/**",
+      "**/test-results/**",
+      "**/.turbo/**",
+      "**/.cache/**",
+      "**/.vercel/**",
+      "**/.wrangler/**",
+      "**/.parcel-cache/**",
+      "**/.vite/**",
+      "**/.eslintcache/**",
+      "**/.nyc_output/**",
+      "**/.storybook/**",
+      "**/.cursor/**",
+      "logs/**"
+    ]
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "complexity": {
+        "noForEach": "off",
+        "useLiteralKeys": "off"
+      },
+      "style": {
+        "noNonNullAssertion": "off"
+      },
+      "suspicious": {
+        "noExplicitAny": "off"
+      }
+    }
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 100,
+    "attributePosition": "auto"
+  },
+  "javascript": {
+    "formatter": {
+      "jsxQuoteStyle": "single",
+      "quoteProperties": "asNeeded",
+      "trailingCommas": "es5",
+      "semicolons": "always",
+      "arrowParentheses": "always",
+      "bracketSpacing": true,
+      "bracketSameLine": false,
+      "quoteStyle": "single",
+      "attributePosition": "auto"
+    }
+  }
+}
