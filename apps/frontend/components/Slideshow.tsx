@@ -217,13 +217,13 @@ export default function Slideshow(): React.ReactElement {
         >
           {isPaused ? (
             <>
-              <PlayIcon style={{ height: '1.25rem', width: '1.25rem' }} />
               <span>[r]</span>
+              <PlayIcon style={{ height: '1.25rem', width: '1.25rem' }} />
             </>
           ) : (
             <>
-              <PauseIcon style={{ height: '1.25rem', width: '1.25rem' }} />
               <span>[p]</span>
+              <PauseIcon style={{ height: '1.25rem', width: '1.25rem' }} />
             </>
           )}
         </button>
@@ -245,8 +245,8 @@ export default function Slideshow(): React.ReactElement {
             transition: 'all 0.2s',
           }}
         >
-          <XMarkIcon style={{ height: '1.25rem', width: '1.25rem' }} />
           <span>[e]</span>
+          <XMarkIcon style={{ height: '1.25rem', width: '1.25rem' }} />
         </button>
       </div>
     </div>
