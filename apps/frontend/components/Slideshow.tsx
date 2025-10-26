@@ -154,7 +154,7 @@ export default function Slideshow(): React.ReactElement {
               display: 'flex',
               flexDirection: 'column',
               gap: '0.75rem',
-              maxWidth: '1200px',
+              maxWidth: '100rem',
               textAlign: 'left',
             }}
           >
@@ -162,7 +162,7 @@ export default function Slideshow(): React.ReactElement {
               style={{
                 fontSize: 'clamp(1.75rem, 4.5vw, 3.5rem)',
                 fontWeight: 'bold',
-                lineHeight: 1.2,
+                lineHeight: 1.1,
                 marginBottom: '0.5rem',
               }}
             >
@@ -173,8 +173,8 @@ export default function Slideshow(): React.ReactElement {
                 key={sub}
                 style={{
                   borderBottom: `0.1875rem solid currentColor`,
-                  fontSize: 'clamp(1.125rem, 2.75vw, 2.25rem)',
-                  lineHeight: 1.3,
+                  fontSize: 'clamp(1rem, 2.5vw, 2rem)',
+                  lineHeight: 1.2,
                   paddingBottom: '0.75rem',
                 }}
               >
