@@ -4,6 +4,9 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Flashcards',
   description: 'A simple slideshow flashcards app',
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 /**
