@@ -45,7 +45,7 @@ export default function HomePage(): React.ReactElement {
         color: '#ffffff',
         display: 'flex',
         flexDirection: 'column',
-        height: '100vh',
+        minHeight: '100vh',
         justifyContent: 'center',
         padding: '2rem',
         width: '100vw',
@@ -70,7 +70,7 @@ export default function HomePage(): React.ReactElement {
           Flashcards
         </h1>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <label
               htmlFor='collection-select'
@@ -152,12 +152,20 @@ export default function HomePage(): React.ReactElement {
                     borderRadius: '8px',
                     cursor: 'pointer',
                     display: 'flex',
+                    flexDirection: 'column',
                     gap: '1rem',
                     padding: '1rem',
                     transition: 'all 0.2s',
                   }}
                 >
-                  <div style={{ display: 'flex', gap: '0.5rem' }}>
+                  <div
+                    style={{
+                      display: 'flex',
+                      flexWrap: 'wrap',
+                      gap: '0.5rem',
+                      justifyContent: 'center',
+                    }}
+                  >
                     {palette.colors.map((color) => (
                       <div
                         key={color}
