@@ -1,5 +1,6 @@
 'use client';
 
+import { PauseIcon, PlayIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useRouter } from 'next/navigation';
 import { useCallback, useEffect, useState } from 'react';
 import { getCollectionByName } from '@/lib/collections';
@@ -188,12 +189,11 @@ export default function Slideshow(): React.ReactElement {
       {/* Controls */}
       <div
         style={{
-          bottom: '2rem',
+          bottom: '1.5rem',
           display: 'flex',
-          gap: '1rem',
-          left: '50%',
+          gap: '0.75rem',
           position: 'fixed',
-          transform: 'translateX(-50%)',
+          right: '1.5rem',
           zIndex: 1000,
         }}
       >
@@ -201,35 +201,52 @@ export default function Slideshow(): React.ReactElement {
           type='button'
           onClick={togglePause}
           style={{
-            backgroundColor: 'rgba(0, 0, 0, 0.7)',
-            border: '2px solid rgba(255, 255, 255, 0.3)',
-            borderRadius: '8px',
+            alignItems: 'center',
+            backgroundColor: '#000000',
+            border: '0.125rem solid #ffffff',
+            borderRadius: '0.5rem',
             color: '#ffffff',
             cursor: 'pointer',
-            fontSize: '1.25rem',
+            display: 'flex',
+            fontSize: '0.875rem',
             fontWeight: 'bold',
-            padding: '1rem 2rem',
+            gap: '0.375rem',
+            padding: '0.5rem 0.75rem',
             transition: 'all 0.2s',
           }}
         >
-          {isPaused ? 'Resume' : 'Pause'}
+          {isPaused ? (
+            <>
+              <PlayIcon style={{ height: '1.25rem', width: '1.25rem' }} />
+              <span>[r]</span>
+            </>
+          ) : (
+            <>
+              <PauseIcon style={{ height: '1.25rem', width: '1.25rem' }} />
+              <span>[p]</span>
+            </>
+          )}
         </button>
         <button
           type='button'
           onClick={handleExit}
           style={{
-            backgroundColor: 'rgba(0, 0, 0, 0.7)',
-            border: '2px solid rgba(255, 255, 255, 0.3)',
-            borderRadius: '8px',
+            alignItems: 'center',
+            backgroundColor: '#000000',
+            border: '0.125rem solid #ffffff',
+            borderRadius: '0.5rem',
             color: '#ffffff',
             cursor: 'pointer',
-            fontSize: '1.25rem',
+            display: 'flex',
+            fontSize: '0.875rem',
             fontWeight: 'bold',
-            padding: '1rem 2rem',
+            gap: '0.375rem',
+            padding: '0.5rem 0.75rem',
             transition: 'all 0.2s',
           }}
         >
-          Exit
+          <XMarkIcon style={{ height: '1.25rem', width: '1.25rem' }} />
+          <span>[e]</span>
         </button>
       </div>
     </div>
