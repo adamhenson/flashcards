@@ -48,4 +48,3 @@ export type ColorPalette = {
   /** Display name for the palette */
   name: string;
 };
-

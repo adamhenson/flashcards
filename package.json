@@ -8,8 +8,8 @@
   ],
   "scripts": {
     "prepare": "husky",
-    "lint": "biome check --write .",
-    "format": "biome format . --write",
+    "lint": "biome check --write apps packages",
+    "format": "biome format apps packages --write",
     "typecheck": "npm -ws --if-present run typecheck",
     "build": "npm -ws --if-present run build",
     "dev:web": "npm run dev --workspace @hensonism/flashcards"
@@ -22,8 +22,11 @@
     "typescript": "^5.6.3"
   },
   "lint-staged": {
-    "*.{ts,tsx,js,jsx,json}": [
-      "biome check --write"
+    "apps/**/*.{ts,tsx,js,jsx,json}": [
+      "biome check --write --no-errors-on-unmatched"
+    ],
+    "packages/**/*.{ts,tsx,js,jsx,json}": [
+      "biome check --write --no-errors-on-unmatched"
     ]
   },
   "engines": {

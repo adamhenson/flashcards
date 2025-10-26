@@ -1,8 +1,8 @@
-import type { FlashcardCollection } from '@/types/flashcard';
 import fancyWordsAi from '@/data/fancy-words-ai.json';
 import fancyWordsGeneric from '@/data/fancy-words-generic.json';
 import fancyWordsSoftwareEngineers from '@/data/fancy-words-software-engineers.json';
 import fancyWordsSystemDesign from '@/data/fancy-words-system-design-and-architecture.json';
+import type { FlashcardCollection } from '@/types/flashcard';
 
 /**
  * Get all available flashcard collections
@@ -27,4 +27,3 @@ export const getCollectionByName = ({
   const collections = getAllCollections();
   return collections.find((c) => c.name === name);
 };
-

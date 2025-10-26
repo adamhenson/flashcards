@@ -2,27 +2,7 @@
   "$schema": "https://biomejs.dev/schemas/2.2.5/schema.json",
   "files": {
     "ignoreUnknown": false,
-    "includes": ["**/*.{js,jsx,ts,tsx,json}"],
-    "experimentalScannerIgnores": [
-      "**/node_modules/**",
-      "**/.next/**",
-      "**/dist/**",
-      "**/build/**",
-      "**/coverage/**",
-      "**/playwright-report/**",
-      "**/test-results/**",
-      "**/.turbo/**",
-      "**/.cache/**",
-      "**/.vercel/**",
-      "**/.wrangler/**",
-      "**/.parcel-cache/**",
-      "**/.vite/**",
-      "**/.eslintcache/**",
-      "**/.nyc_output/**",
-      "**/.storybook/**",
-      "**/.cursor/**",
-      "logs/**"
-    ]
+    "includes": ["**/*.{js,jsx,ts,tsx,json}"]
   },
   "linter": {
     "enabled": true,

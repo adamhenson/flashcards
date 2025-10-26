@@ -1,38 +1,269 @@
 {
   "name": "Fancy Words Software Engineers",
   "items": [
-    {"main": "Ergonomic (ur-GOH-nuh-mik) – adjective", "subs": ["Designed for efficiency and comfort in use.", "a) We rebuilt the CLI to be more ergonomic for everyday workflows.", "b) His code style is so ergonomic it almost reads itself."]},
-    {"main": "Modular (MOJ-uh-ler) – adjective", "subs": ["Composed of standardized, interchangeable parts or units.", "a) Our modular architecture makes it easy to add new services.", "b) She presented a modular design that scales elegantly."]},
-    {"main": "Idiomatic (id-ee-oh-MAT-ik) – adjective", "subs": ["Natural to a particular style, language, or framework.", "a) That's a more idiomatic way to write it in Go.", "b) His TypeScript code is so idiomatic you'd think he wrote the compiler."]},
-    {"main": "Asynchronous (ay-SING-kroh-nus) – adjective", "subs": ["Not occurring at the same time; operating independently.", "a) We switched to asynchronous APIs to improve performance.", "b) Asynchronous thinking helps when juggling multiple projects."]},
-    {"main": "Deterministic (dee-ter-min-IS-tik) – adjective", "subs": ["Predictable; producing the same output for the same input.", "a) Our tests need to be deterministic, not random.", "b) He has a deterministic morning routine—coffee, code, repeat."]},
-    {"main": "Declarative (dee-KLAIR-uh-tiv) – adjective", "subs": ["Expressing logic without describing control flow.", "a) React's declarative syntax changed how we build UIs.", "b) I prefer declarative configs—less code, more clarity."]},
-    {"main": "Resilient (ri-ZIL-yunt) – adjective", "subs": ["Able to recover quickly from failure or disruption.", "a) The system is resilient even when one node goes down.", "b) He stayed resilient through every product pivot."]},
-    {"main": "Idempotent (EYE-dum-puh-tent) – adjective", "subs": ["Producing the same result no matter how many times it's executed.", "a) Make sure your DELETE requests are idempotent.", "b) Her debugging method is so idempotent—it never overcomplicates things."]},
-    {"main": "Orthogonal (or-THOG-uh-nl) – adjective", "subs": ["Independent or non-overlapping; unrelated dimensions.", "a) These two features are orthogonal—you can build one without the other.", "b) He likes to keep design and deployment orthogonal for flexibility."]},
-    {"main": "Granular (GRAN-yuh-ler) – adjective", "subs": ["Detailed or fine-grained.", "a) We need more granular logging to track that bug.", "b) Her explanation was refreshingly granular, not buzzwordy."]},
-    {"main": "Ephemeral (eh-FEM-er-uhl) – adjective", "subs": ["Short-lived; lasting for a brief time.", "a) We store session data in ephemeral memory.", "b) He loves the ephemeral beauty of side projects that never ship."]},
-    {"main": "Verbose (ver-BOHS) – adjective", "subs": ["Using more words than necessary; overly detailed.", "a) That stack trace is way too verbose.", "b) He can be verbose when explaining recursion at parties."]},
-    {"main": "Robust (roh-BUHST) – adjective", "subs": ["Strong and able to handle stress or errors.", "a) We made the API more robust after the outage.", "b) She writes robust code that survives anything you throw at it."]},
-    {"main": "Composable (kuhm-POHZ-uh-buhl) – adjective", "subs": ["Capable of being combined or reused in flexible ways.", "a) Composable UI components make scaling painless.", "b) His approach to systems is beautifully composable."]},
-    {"main": "Immutable (ih-MYOO-tuh-buhl) – adjective", "subs": ["Unchangeable once created.", "a) We store configuration as immutable state objects.", "b) Her opinions on tabs vs. spaces are immutable."]},
-    {"main": "Cohesive (koh-HEE-siv) – adjective", "subs": ["Forming a consistent, unified whole.", "a) The codebase feels cohesive despite multiple contributors.", "b) They've got a cohesive design language across products."]},
-    {"main": "Redundant (ri-DUN-dunt) – adjective", "subs": ["Unnecessary repetition or backup.", "a) The backup system is redundant on purpose.", "b) That comment is redundant—the code already explains it."]},
-    {"main": "Atomic (uh-TOM-ik) – adjective", "subs": ["Indivisible; performed as a single, complete unit.", "a) We made database writes atomic to prevent data loss.", "b) He likes atomic habits—tiny but powerful improvements."]},
-    {"main": "Obfuscated (OB-fuh-say-ted) – adjective", "subs": ["Made unclear or hidden; deliberately complicated.", "a) The minified code is completely obfuscated.", "b) Her notes were so obfuscated I needed a legend to read them."]},
-    {"main": "Concise (kun-SICE) – adjective", "subs": ["Brief but comprehensive; efficiently expressed.", "a) Keep your commit messages concise and meaningful.", "b) He gave a concise summary of a three-month sprint."]},
-    {"main": "Polymorphic (pah-lee-MOR-fik) – adjective", "subs": ["Having many forms; in programming, the ability of code to handle different data types through a single interface.", "a) The function is polymorphic—it works on both strings and numbers.", "b) He gave a polymorphic answer that applied to every framework."]},
-    {"main": "Abstraction (ab-STRAK-shun) – noun", "subs": ["A simplified representation that hides unnecessary complexity.", "a) Good abstraction keeps code readable and maintainable.", "b) He's great at finding the right level of abstraction for a problem."]},
-    {"main": "Encapsulation (en-CAP-syoo-lay-shun) – noun", "subs": ["The bundling of data and the methods that operate on it.", "a) Encapsulation makes debugging so much easier.", "b) Her classes have perfect encapsulation—nothing leaks out unintentionally."]},
-    {"main": "Concurrency (kun-KUR-en-see) – noun", "subs": ["Multiple tasks progressing at the same time.", "a) They rewrote the service to handle concurrency safely.", "b) He explained concurrency using the metaphor of people cooking in one kitchen."]},
-    {"main": "Latency (LAY-ten-see) – noun", "subs": ["Delay between a request and response.", "a) The app feels snappy now that we cut the latency in half.", "b) She blames her slow replies on \"network latency.\""]},
-    {"main": "Throughput (THROO-put) – noun", "subs": ["The amount of work done in a given time period.", "a) We improved throughput by batching writes.", "b) His caffeine throughput is dangerously high before noon."]},
-    {"main": "Stateful (STAYT-ful) – adjective", "subs": ["Maintaining information between interactions.", "a) The app is stateful—it remembers your last session.", "b) He's basically stateful before coffee and stateless after lunch."]},
-    {"main": "Stateless (STAYT-luhs) – adjective", "subs": ["Not retaining any state or session data between uses.", "a) We switched to a stateless API to simplify scaling.", "b) He described his weekends as stateless—nothing carries over."]},
-    {"main": "Recursion (ri-KUR-shun) – noun", "subs": ["A function that calls itself until a base condition is met.", "a) Recursion is how you make something elegant—and then regret it.", "b) He used recursion to clean his room: every drawer was a new subproblem."]},
-    {"main": "Event-driven (ih-VENT-driv-en) – adjective", "subs": ["Triggered by external events rather than a fixed flow.", "a) Our event-driven architecture scales beautifully under load.", "b) His weekend plans are entirely event-driven—he just reacts to texts."]},
-    {"main": "State Machine (STAYT muh-SHEEN) – noun", "subs": ["A model describing a system that transitions between defined states based on inputs.", "a) We modeled the checkout flow as a finite state machine.", "b) My morning routine is basically a two-state machine: asleep or caffeinated."]},
-    {"main": "Monolithic (mon-uh-LITH-ik) – adjective", "subs": ["Large, unified, and difficult to separate into parts.", "a) We're breaking the monolithic app into microservices.", "b) His old laptop is a monolithic beast that weighs ten pounds."]},
-    {"main": "Heuristic (hyoo-RIS-tik) – noun", "subs": ["A practical rule or shortcut that helps solve problems quickly.", "a) We use a simple heuristic to detect spammy logins.", "b) Her heuristic for debugging is \"turn it off and back on.\""]}
+    {
+      "main": "Ergonomic (ur-GOH-nuh-mik) – adjective",
+      "subs": [
+        "Designed for efficiency and comfort in use.",
+        "a) We rebuilt the CLI to be more ergonomic for everyday workflows.",
+        "b) His code style is so ergonomic it almost reads itself."
+      ]
+    },
+    {
+      "main": "Modular (MOJ-uh-ler) – adjective",
+      "subs": [
+        "Composed of standardized, interchangeable parts or units.",
+        "a) Our modular architecture makes it easy to add new services.",
+        "b) She presented a modular design that scales elegantly."
+      ]
+    },
+    {
+      "main": "Idiomatic (id-ee-oh-MAT-ik) – adjective",
+      "subs": [
+        "Natural to a particular style, language, or framework.",
+        "a) That's a more idiomatic way to write it in Go.",
+        "b) His TypeScript code is so idiomatic you'd think he wrote the compiler."
+      ]
+    },
+    {
+      "main": "Asynchronous (ay-SING-kroh-nus) – adjective",
+      "subs": [
+        "Not occurring at the same time; operating independently.",
+        "a) We switched to asynchronous APIs to improve performance.",
+        "b) Asynchronous thinking helps when juggling multiple projects."
+      ]
+    },
+    {
+      "main": "Deterministic (dee-ter-min-IS-tik) – adjective",
+      "subs": [
+        "Predictable; producing the same output for the same input.",
+        "a) Our tests need to be deterministic, not random.",
+        "b) He has a deterministic morning routine—coffee, code, repeat."
+      ]
+    },
+    {
+      "main": "Declarative (dee-KLAIR-uh-tiv) – adjective",
+      "subs": [
+        "Expressing logic without describing control flow.",
+        "a) React's declarative syntax changed how we build UIs.",
+        "b) I prefer declarative configs—less code, more clarity."
+      ]
+    },
+    {
+      "main": "Resilient (ri-ZIL-yunt) – adjective",
+      "subs": [
+        "Able to recover quickly from failure or disruption.",
+        "a) The system is resilient even when one node goes down.",
+        "b) He stayed resilient through every product pivot."
+      ]
+    },
+    {
+      "main": "Idempotent (EYE-dum-puh-tent) – adjective",
+      "subs": [
+        "Producing the same result no matter how many times it's executed.",
+        "a) Make sure your DELETE requests are idempotent.",
+        "b) Her debugging method is so idempotent—it never overcomplicates things."
+      ]
+    },
+    {
+      "main": "Orthogonal (or-THOG-uh-nl) – adjective",
+      "subs": [
+        "Independent or non-overlapping; unrelated dimensions.",
+        "a) These two features are orthogonal—you can build one without the other.",
+        "b) He likes to keep design and deployment orthogonal for flexibility."
+      ]
+    },
+    {
+      "main": "Granular (GRAN-yuh-ler) – adjective",
+      "subs": [
+        "Detailed or fine-grained.",
+        "a) We need more granular logging to track that bug.",
+        "b) Her explanation was refreshingly granular, not buzzwordy."
+      ]
+    },
+    {
+      "main": "Ephemeral (eh-FEM-er-uhl) – adjective",
+      "subs": [
+        "Short-lived; lasting for a brief time.",
+        "a) We store session data in ephemeral memory.",
+        "b) He loves the ephemeral beauty of side projects that never ship."
+      ]
+    },
+    {
+      "main": "Verbose (ver-BOHS) – adjective",
+      "subs": [
+        "Using more words than necessary; overly detailed.",
+        "a) That stack trace is way too verbose.",
+        "b) He can be verbose when explaining recursion at parties."
+      ]
+    },
+    {
+      "main": "Robust (roh-BUHST) – adjective",
+      "subs": [
+        "Strong and able to handle stress or errors.",
+        "a) We made the API more robust after the outage.",
+        "b) She writes robust code that survives anything you throw at it."
+      ]
+    },
+    {
+      "main": "Composable (kuhm-POHZ-uh-buhl) – adjective",
+      "subs": [
+        "Capable of being combined or reused in flexible ways.",
+        "a) Composable UI components make scaling painless.",
+        "b) His approach to systems is beautifully composable."
+      ]
+    },
+    {
+      "main": "Immutable (ih-MYOO-tuh-buhl) – adjective",
+      "subs": [
+        "Unchangeable once created.",
+        "a) We store configuration as immutable state objects.",
+        "b) Her opinions on tabs vs. spaces are immutable."
+      ]
+    },
+    {
+      "main": "Cohesive (koh-HEE-siv) – adjective",
+      "subs": [
+        "Forming a consistent, unified whole.",
+        "a) The codebase feels cohesive despite multiple contributors.",
+        "b) They've got a cohesive design language across products."
+      ]
+    },
+    {
+      "main": "Redundant (ri-DUN-dunt) – adjective",
+      "subs": [
+        "Unnecessary repetition or backup.",
+        "a) The backup system is redundant on purpose.",
+        "b) That comment is redundant—the code already explains it."
+      ]
+    },
+    {
+      "main": "Atomic (uh-TOM-ik) – adjective",
+      "subs": [
+        "Indivisible; performed as a single, complete unit.",
+        "a) We made database writes atomic to prevent data loss.",
+        "b) He likes atomic habits—tiny but powerful improvements."
+      ]
+    },
+    {
+      "main": "Obfuscated (OB-fuh-say-ted) – adjective",
+      "subs": [
+        "Made unclear or hidden; deliberately complicated.",
+        "a) The minified code is completely obfuscated.",
+        "b) Her notes were so obfuscated I needed a legend to read them."
+      ]
+    },
+    {
+      "main": "Concise (kun-SICE) – adjective",
+      "subs": [
+        "Brief but comprehensive; efficiently expressed.",
+        "a) Keep your commit messages concise and meaningful.",
+        "b) He gave a concise summary of a three-month sprint."
+      ]
+    },
+    {
+      "main": "Polymorphic (pah-lee-MOR-fik) – adjective",
+      "subs": [
+        "Having many forms; in programming, the ability of code to handle different data types through a single interface.",
+        "a) The function is polymorphic—it works on both strings and numbers.",
+        "b) He gave a polymorphic answer that applied to every framework."
+      ]
+    },
+    {
+      "main": "Abstraction (ab-STRAK-shun) – noun",
+      "subs": [
+        "A simplified representation that hides unnecessary complexity.",
+        "a) Good abstraction keeps code readable and maintainable.",
+        "b) He's great at finding the right level of abstraction for a problem."
+      ]
+    },
+    {
+      "main": "Encapsulation (en-CAP-syoo-lay-shun) – noun",
+      "subs": [
+        "The bundling of data and the methods that operate on it.",
+        "a) Encapsulation makes debugging so much easier.",
+        "b) Her classes have perfect encapsulation—nothing leaks out unintentionally."
+      ]
+    },
+    {
+      "main": "Concurrency (kun-KUR-en-see) – noun",
+      "subs": [
+        "Multiple tasks progressing at the same time.",
+        "a) They rewrote the service to handle concurrency safely.",
+        "b) He explained concurrency using the metaphor of people cooking in one kitchen."
+      ]
+    },
+    {
+      "main": "Latency (LAY-ten-see) – noun",
+      "subs": [
+        "Delay between a request and response.",
+        "a) The app feels snappy now that we cut the latency in half.",
+        "b) She blames her slow replies on \"network latency.\""
+      ]
+    },
+    {
+      "main": "Throughput (THROO-put) – noun",
+      "subs": [
+        "The amount of work done in a given time period.",
+        "a) We improved throughput by batching writes.",
+        "b) His caffeine throughput is dangerously high before noon."
+      ]
+    },
+    {
+      "main": "Stateful (STAYT-ful) – adjective",
+      "subs": [
+        "Maintaining information between interactions.",
+        "a) The app is stateful—it remembers your last session.",
+        "b) He's basically stateful before coffee and stateless after lunch."
+      ]
+    },
+    {
+      "main": "Stateless (STAYT-luhs) – adjective",
+      "subs": [
+        "Not retaining any state or session data between uses.",
+        "a) We switched to a stateless API to simplify scaling.",
+        "b) He described his weekends as stateless—nothing carries over."
+      ]
+    },
+    {
+      "main": "Recursion (ri-KUR-shun) – noun",
+      "subs": [
+        "A function that calls itself until a base condition is met.",
+        "a) Recursion is how you make something elegant—and then regret it.",
+        "b) He used recursion to clean his room: every drawer was a new subproblem."
+      ]
+    },
+    {
+      "main": "Event-driven (ih-VENT-driv-en) – adjective",
+      "subs": [
+        "Triggered by external events rather than a fixed flow.",
+        "a) Our event-driven architecture scales beautifully under load.",
+        "b) His weekend plans are entirely event-driven—he just reacts to texts."
+      ]
+    },
+    {
+      "main": "State Machine (STAYT muh-SHEEN) – noun",
+      "subs": [
+        "A model describing a system that transitions between defined states based on inputs.",
+        "a) We modeled the checkout flow as a finite state machine.",
+        "b) My morning routine is basically a two-state machine: asleep or caffeinated."
+      ]
+    },
+    {
+      "main": "Monolithic (mon-uh-LITH-ik) – adjective",
+      "subs": [
+        "Large, unified, and difficult to separate into parts.",
+        "a) We're breaking the monolithic app into microservices.",
+        "b) His old laptop is a monolithic beast that weighs ten pounds."
+      ]
+    },
+    {
+      "main": "Heuristic (hyoo-RIS-tik) – noun",
+      "subs": [
+        "A practical rule or shortcut that helps solve problems quickly.",
+        "a) We use a simple heuristic to detect spammy logins.",
+        "b) Her heuristic for debugging is \"turn it off and back on.\""
+      ]
+    }
   ]
 }

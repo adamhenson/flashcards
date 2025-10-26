@@ -23,4 +23,3 @@ export const loadConfig = (): SlideshowConfig | null => {
     return null;
   }
 };
-

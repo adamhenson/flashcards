@@ -73,6 +73,7 @@ export default function HomePage(): React.ReactElement {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <label
+              htmlFor='collection-select'
               style={{
                 fontSize: '1.5rem',
                 fontWeight: '600',
@@ -81,6 +82,7 @@ export default function HomePage(): React.ReactElement {
               Choose a Collection
             </label>
             <select
+              id='collection-select'
               value={collectionName}
               onChange={(e) => setCollectionName(e.target.value)}
               style={{
@@ -102,6 +104,7 @@ export default function HomePage(): React.ReactElement {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <label
+              htmlFor='interval-input'
               style={{
                 fontSize: '1.5rem',
                 fontWeight: '600',
@@ -110,6 +113,7 @@ export default function HomePage(): React.ReactElement {
               Interval (seconds)
             </label>
             <input
+              id='interval-input'
               type='number'
               min='1'
               max='60'
@@ -127,14 +131,14 @@ export default function HomePage(): React.ReactElement {
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <label
+            <div
               style={{
                 fontSize: '1.5rem',
                 fontWeight: '600',
               }}
             >
               Color Palette
-            </label>
+            </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               {Object.entries(COLOR_PALETTES).map(([key, palette]) => (
                 <button
@@ -167,9 +171,7 @@ export default function HomePage(): React.ReactElement {
                       />
                     ))}
                   </div>
-                  <span style={{ color: '#ffffff', fontSize: '1.125rem' }}>
-                    {palette.name}
-                  </span>
+                  <span style={{ color: '#ffffff', fontSize: '1.125rem' }}>{palette.name}</span>
                 </button>
               ))}
             </div>
@@ -203,4 +205,3 @@ export default function HomePage(): React.ReactElement {
     </div>
   );
 }
-

@@ -56,25 +56,22 @@ export default function SlideshowPage(): React.ReactElement {
     const config = loadConfig();
     if (!config) return;
 
-    const interval = setInterval(
-      () => {
-        const nextIndex = (currentIndex + 1) % shuffledCards.length;
-        const card = shuffledCards[nextIndex];
-        const color = colors[Math.floor(Math.random() * colors.length)];
+    const interval = setInterval(() => {
+      const nextIndex = (currentIndex + 1) % shuffledCards.length;
+      const card = shuffledCards[nextIndex];
+      const color = colors[Math.floor(Math.random() * colors.length)];
 
-        setNextCard(card);
-        setNextColor(color);
-        setIsTransitioning(true);
+      setNextCard(card);
+      setNextColor(color);
+      setIsTransitioning(true);
 
-        setTimeout(() => {
-          setCurrentCard(card);
-          setCurrentColor(color);
-          setIsTransitioning(false);
-          setCurrentIndex(nextIndex);
-        }, 1000);
-      },
-      config.intervalSeconds * 1000
-    );
+      setTimeout(() => {
+        setCurrentCard(card);
+        setCurrentColor(color);
+        setIsTransitioning(false);
+        setCurrentIndex(nextIndex);
+      }, 1000);
+    }, config.intervalSeconds * 1000);
 
     return () => clearInterval(interval);
   }, [shuffledCards, currentIndex, colors, isPaused]);
@@ -136,9 +133,9 @@ export default function SlideshowPage(): React.ReactElement {
           >
             {currentCard.main}
           </h1>
-          {currentCard.subs.map((sub, index) => (
+          {currentCard.subs.map((sub) => (
             <p
-              key={index}
+              key={sub}
               style={{
                 fontSize: 'clamp(1.25rem, 3vw, 2.5rem)',
                 lineHeight: 1.5,
@@ -188,9 +185,9 @@ export default function SlideshowPage(): React.ReactElement {
             >
               {nextCard.main}
             </h1>
-            {nextCard.subs.map((sub, index) => (
+            {nextCard.subs.map((sub) => (
               <p
-                key={index}
+                key={sub}
                 style={{
                   fontSize: 'clamp(1.25rem, 3vw, 2.5rem)',
                   lineHeight: 1.5,
@@ -253,4 +250,3 @@ export default function SlideshowPage(): React.ReactElement {
     </div>
   );
 }
-

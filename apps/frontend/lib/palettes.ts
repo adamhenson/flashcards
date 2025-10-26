@@ -17,12 +17,4 @@ export const COLOR_PALETTES: Record<string, ColorPalette> = {
 
 export const DARK_TEXT_COLORS = ['#264653', '#00537a', '#013c58'];
 
-export const LIGHT_TEXT_COLORS = [
-  '#361c0e',
-  '#570211',
-  '#7e3110',
-  '#004540',
-  '#032c4d',
-  '#360825',
-];
-
+export const LIGHT_TEXT_COLORS = ['#361c0e', '#570211', '#7e3110', '#004540', '#032c4d', '#360825'];
