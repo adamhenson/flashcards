@@ -203,7 +203,7 @@ export default function Slideshow(): React.ReactElement {
           style={{
             alignItems: 'center',
             backgroundColor: '#000000',
-            border: '0.125rem solid #ffffff',
+            border: 'none',
             borderRadius: '0.5rem',
             color: '#ffffff',
             cursor: 'pointer',
@@ -233,7 +233,7 @@ export default function Slideshow(): React.ReactElement {
           style={{
             alignItems: 'center',
             backgroundColor: '#000000',
-            border: '0.125rem solid #ffffff',
+            border: 'none',
             borderRadius: '0.5rem',
             color: '#ffffff',
             cursor: 'pointer',
