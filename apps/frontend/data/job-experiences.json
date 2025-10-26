@@ -9,7 +9,8 @@
         "Implemented real-time analytics that increased user engagement by 40%",
         "Mentored junior developers on best practices and code review processes",
         "Collaborated with product team to define technical requirements and roadmap"
-      ]
+      ],
+      "tags": ["category", "important", "review"]
     },
     {
       "main": "Database Migration Initiative - Senior Engineer (2021)",
@@ -19,7 +20,8 @@
         "Created comprehensive rollback procedures and disaster recovery plans",
         "Reduced query latency by 70% through optimized indexing strategies",
         "Documented entire process for future reference and team knowledge sharing"
-      ]
+      ],
+      "tags": ["architecture", "design"]
     },
     {
       "main": "Customer Portal Redesign - Full Stack Engineer (2020)",

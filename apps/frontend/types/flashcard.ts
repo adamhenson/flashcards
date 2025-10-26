@@ -11,6 +11,9 @@ export type FlashcardItem = {
 
   /** Sub-text lines displayed below the main text */
   subs: string[];
+
+  /** Optional tags to categorize the flashcard */
+  tags?: string[];
 };
 
 /**

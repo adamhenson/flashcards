@@ -186,6 +186,38 @@ export default function Slideshow(): React.ReactElement {
         </div>
       )}
 
+      {/* Tags */}
+      {currentCard?.tags && currentCard.tags.length > 0 && (
+        <div
+          style={{
+            bottom: '1.5rem',
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '0.75rem',
+            left: '1.5rem',
+            position: 'fixed',
+            zIndex: 1000,
+          }}
+        >
+          {currentCard.tags.map((tag) => (
+            <span
+              key={tag}
+              style={{
+                backgroundColor: 'transparent',
+                border: `0.1875rem solid ${getTextColor(currentColor)}`,
+                borderRadius: '0.5rem',
+                color: getTextColor(currentColor),
+                fontSize: '0.875rem',
+                fontWeight: 'bold',
+                padding: '0.5rem 0.75rem',
+              }}
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
+
       {/* Controls */}
       <div
         style={{
