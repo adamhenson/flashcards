@@ -1,0 +1,11 @@
+{
+  "users": {
+    "adam": {
+      "collections": ["all"]
+    },
+    "guest": {
+      "collections": ["Fancy Words Generic", "Fancy Words Software Engineers"]
+    }
+  },
+  "skipExpiryDays": 7
+}

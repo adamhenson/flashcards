@@ -2,30 +2,66 @@
 
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { getAllowedCollections } from '@/lib/auth';
 import { getAllCollections } from '@/lib/collections';
 import { COLOR_PALETTES } from '@/lib/palettes';
-import { loadConfig, saveConfig } from '@/lib/storage';
-import type { SlideshowConfig } from '@/types/flashcard';
+import { loadConfig, loadUserSession, saveConfig } from '@/lib/storage';
+import type { FlashcardCollection, SlideshowConfig } from '@/types/flashcard';
 
 /**
  * Main configuration page for setting up the flashcards slideshow
  */
 export default function HomePage(): React.ReactElement {
   const router = useRouter();
-  const collections = getAllCollections();
-
-  const [collectionName, setCollectionName] = useState<string>(collections[0].name);
+  const [isCheckingAuth, setIsCheckingAuth] = useState(true);
+  const [collections, setCollections] = useState<FlashcardCollection[]>([]);
+  const [collectionName, setCollectionName] = useState<string>('');
   const [intervalSeconds, setIntervalSeconds] = useState<number>(5);
   const [paletteTheme, setPaletteTheme] = useState<string>('earth');
 
   useEffect(() => {
+    // Check for valid user session
+    const session = loadUserSession();
+
+    if (!session) {
+      router.push('/login');
+      return;
+    }
+
+    // Check if session is still valid
+    const { isSessionValid } = require('@/lib/auth');
+    if (!isSessionValid({ timestamp: session.timestamp, type: session.type })) {
+      router.push('/login');
+      return;
+    }
+
+    // Load collections based on user
+    const allCollections = getAllCollections();
+    let allowedCollections = allCollections;
+
+    if (session.type === 'user' && session.username) {
+      allowedCollections = getAllowedCollections({
+        allCollections,
+        username: session.username,
+      });
+    }
+
+    setCollections(allowedCollections);
+    setCollectionName(allowedCollections[0]?.name || '');
+    setIsCheckingAuth(false);
+
+    // Load saved config
     const config = loadConfig();
     if (config) {
-      setCollectionName(config.collectionName);
+      // Only use saved collection if user has access to it
+      const hasAccess = allowedCollections.some((c) => c.name === config.collectionName);
+      if (hasAccess) {
+        setCollectionName(config.collectionName);
+      }
       setIntervalSeconds(config.intervalSeconds);
       setPaletteTheme(config.paletteTheme);
     }
-  }, []);
+  }, [router]);
 
   const handleStart = (): void => {
     const config: SlideshowConfig = {
@@ -36,6 +72,29 @@ export default function HomePage(): React.ReactElement {
     saveConfig({ config });
     router.push('/slideshow');
   };
+
+  if (isCheckingAuth) {
+    return <div />;
+  }
+
+  if (collections.length === 0) {
+    return (
+      <div
+        style={{
+          alignItems: 'center',
+          backgroundColor: '#1a1a1a',
+          color: '#ffffff',
+          display: 'flex',
+          flexDirection: 'column',
+          minHeight: '100vh',
+          justifyContent: 'center',
+          padding: '2rem',
+        }}
+      >
+        <p style={{ fontSize: '1.5rem' }}>No collections available</p>
+      </div>
+    );
+  }
 
   return (
     <div

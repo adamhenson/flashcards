@@ -1,7 +1,9 @@
 import type { SlideshowConfig } from '@/types/flashcard';
+import type { UserSession } from '@/types/user';
 
 const STORAGE_KEY = 'flashcards_config';
 const LAST_COLOR_KEY = 'flashcards_last_color';
+const USER_SESSION_KEY = 'flashcards_user_session';
 
 /**
  * Save slideshow configuration to localStorage
@@ -39,4 +41,34 @@ export const saveLastColor = ({ color }: { color: string }): void => {
 export const loadLastColor = (): string | null => {
   if (typeof window === 'undefined') return null;
   return localStorage.getItem(LAST_COLOR_KEY);
+};
+
+/**
+ * Save user session to localStorage
+ */
+export const saveUserSession = ({ session }: { session: UserSession }): void => {
+  if (typeof window === 'undefined') return;
+  localStorage.setItem(USER_SESSION_KEY, JSON.stringify(session));
+};
+
+/**
+ * Load user session from localStorage
+ */
+export const loadUserSession = (): UserSession | null => {
+  if (typeof window === 'undefined') return null;
+  const stored = localStorage.getItem(USER_SESSION_KEY);
+  if (!stored) return null;
+  try {
+    return JSON.parse(stored) as UserSession;
+  } catch {
+    return null;
+  }
+};
+
+/**
+ * Clear user session from localStorage
+ */
+export const clearUserSession = (): void => {
+  if (typeof window === 'undefined') return;
+  localStorage.removeItem(USER_SESSION_KEY);
 };
