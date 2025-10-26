@@ -7,7 +7,7 @@
     "packages/*"
   ],
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "husky",
     "lint": "biome check --write .",
     "format": "biome format . --write",
     "typecheck": "npm -ws --if-present run typecheck",
