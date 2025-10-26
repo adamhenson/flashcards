@@ -153,16 +153,17 @@ export default function Slideshow(): React.ReactElement {
             style={{
               display: 'flex',
               flexDirection: 'column',
-              gap: '1rem',
+              gap: '0.75rem',
               maxWidth: '1200px',
-              textAlign: 'center',
+              textAlign: 'left',
             }}
           >
             <h1
               style={{
-                fontSize: 'clamp(2rem, 5vw, 4rem)',
+                fontSize: 'clamp(1.75rem, 4.5vw, 3.5rem)',
                 fontWeight: 'bold',
                 lineHeight: 1.2,
+                marginBottom: '0.5rem',
               }}
             >
               {currentCard.main}
@@ -171,8 +172,10 @@ export default function Slideshow(): React.ReactElement {
               <p
                 key={sub}
                 style={{
-                  fontSize: 'clamp(1.25rem, 3vw, 2.5rem)',
-                  lineHeight: 1.5,
+                  borderBottom: `0.1875rem solid currentColor`,
+                  fontSize: 'clamp(1.125rem, 2.75vw, 2.25rem)',
+                  lineHeight: 1.3,
+                  paddingBottom: '0.75rem',
                 }}
               >
                 {sub}
