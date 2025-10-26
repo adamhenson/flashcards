@@ -34,9 +34,9 @@ Flashcard collections are stored as JSON files in `/apps/frontend/data/`. Each c
 ### Color Palettes
 
 Three predefined color palettes are available:
-- **Earth Tones**: Natural, warm colors
-- **Ocean Blues**: Cool blues with warm accents
-- **Midnight**: Dark, moody tones (all with white text)
+- **Tropical Sunset Vibes**: Natural, warm colors
+- **Sunny Beach Retro Vibes**: Cool blues with warm accents
+- **Rich Earthy Jewel**: Dark, moody tones (all with white text)
 
 Colors are randomly selected from the chosen palette for each flashcard transition.
 

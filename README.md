@@ -11,9 +11,9 @@ A simple yet elegant slideshow application for displaying flashcards. The app cy
   - Fancy Words System Design and Architecture
 
 - 🎨 **Color Palettes**: Three beautiful color themes:
-  - Earth Tones
-  - Ocean Blues
-  - Midnight
+  - Tropical Sunset Vibes
+  - Sunny Beach Retro Vibes
+  - Rich Earthy Jewel
 
 - ⏱️ **Customizable Timing**: Set your preferred interval (in seconds) between flashcards
 
