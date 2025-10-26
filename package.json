@@ -7,7 +7,7 @@
     "packages/*"
   ],
   "scripts": {
-    "prepare": "node -e \"if (process.env.CI !== 'true') { require('child_process').execSync('husky', {stdio: 'inherit'}) }\"",
+    "prepare": "node -e \"try { require('child_process').execSync('husky', {stdio: 'inherit'}) } catch (e) { }\"",
     "lint": "biome check --write apps packages",
     "format": "biome format apps packages --write",
     "typecheck": "npm -ws --if-present run typecheck",
