@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { getAllowedCollections } from '@/lib/auth';
+import { getAllowedCollections, getSkipUserCollections } from '@/lib/auth';
 import { getAllCollections } from '@/lib/collections';
 import { COLOR_PALETTES } from '@/lib/palettes';
 import { loadConfig, loadUserSession, saveConfig } from '@/lib/storage';
@@ -39,7 +39,11 @@ export default function HomePage(): React.ReactElement {
     const allCollections = getAllCollections();
     let allowedCollections = allCollections;
 
-    if (session.type === 'user' && session.username) {
+    if (session.type === 'skip') {
+      // Skip users see all collections except restricted ones
+      allowedCollections = getSkipUserCollections({ allCollections });
+    } else if (session.type === 'user' && session.username) {
+      // Logged in users see collections based on their permissions
       allowedCollections = getAllowedCollections({
         allCollections,
         username: session.username,

@@ -1,0 +1,35 @@
+{
+  "name": "Job Experiences",
+  "items": [
+    {
+      "main": "Project Phoenix - Lead Developer (2022-2023)",
+      "subs": [
+        "Led a team of 5 engineers to rebuild the core platform from monolith to microservices",
+        "Reduced deployment time from 2 hours to 15 minutes through CI/CD improvements",
+        "Implemented real-time analytics that increased user engagement by 40%",
+        "Mentored junior developers on best practices and code review processes",
+        "Collaborated with product team to define technical requirements and roadmap"
+      ]
+    },
+    {
+      "main": "Database Migration Initiative - Senior Engineer (2021)",
+      "subs": [
+        "Designed and executed zero-downtime migration from PostgreSQL to distributed database",
+        "Handled 50TB of data migration while maintaining 99.99% uptime SLA",
+        "Created comprehensive rollback procedures and disaster recovery plans",
+        "Reduced query latency by 70% through optimized indexing strategies",
+        "Documented entire process for future reference and team knowledge sharing"
+      ]
+    },
+    {
+      "main": "Customer Portal Redesign - Full Stack Engineer (2020)",
+      "subs": [
+        "Built responsive React dashboard that improved customer satisfaction scores by 35%",
+        "Integrated with 8 different third-party APIs for unified data presentation",
+        "Implemented accessibility features achieving WCAG 2.1 AA compliance",
+        "Reduced support tickets by 50% through intuitive self-service features",
+        "Collaborated with UX team conducting user research and usability testing"
+      ]
+    }
+  ]
+}

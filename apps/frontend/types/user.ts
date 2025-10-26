@@ -13,6 +13,9 @@ export type UsersData = {
   /** Skip expiry in days */
   skipExpiryDays: number;
 
+  /** Collections that skip users cannot access */
+  skipRestrictedCollections: string[];
+
   /** Map of username to user configuration */
   users: Record<string, UserConfig>;
 };
