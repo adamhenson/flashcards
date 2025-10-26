@@ -59,3 +59,17 @@ export const getAllowedCollections = ({
 
   return allCollections.filter((collection) => userConfig.collections.includes(collection.name));
 };
+
+/**
+ * Get allowed collections for skip users (users who skipped login)
+ */
+export const getSkipUserCollections = ({
+  allCollections,
+}: {
+  /** All available collections */
+  allCollections: FlashcardCollection[];
+}): FlashcardCollection[] => {
+  return allCollections.filter(
+    (collection) => !users.skipRestrictedCollections.includes(collection.name)
+  );
+};

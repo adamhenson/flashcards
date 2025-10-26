@@ -2,6 +2,7 @@ import fancyWordsAi from '@/data/fancy-words-ai.json';
 import fancyWordsGeneric from '@/data/fancy-words-generic.json';
 import fancyWordsSoftwareEngineers from '@/data/fancy-words-software-engineers.json';
 import fancyWordsSystemDesign from '@/data/fancy-words-system-design-and-architecture.json';
+import jobExperiences from '@/data/job-experiences.json';
 import type { FlashcardCollection } from '@/types/flashcard';
 
 /**
@@ -13,6 +14,7 @@ export const getAllCollections = (): FlashcardCollection[] => {
     fancyWordsAi as FlashcardCollection,
     fancyWordsSoftwareEngineers as FlashcardCollection,
     fancyWordsSystemDesign as FlashcardCollection,
+    jobExperiences as FlashcardCollection,
   ];
 };
 
