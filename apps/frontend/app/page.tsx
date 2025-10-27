@@ -183,7 +183,7 @@ export default function HomePage(): React.ReactElement {
             border: 'none',
             borderRadius: '0.5rem',
             color: '#ffffff',
-            cursor: 'default',
+            cursor: 'pointer',
             display: 'flex',
             fontSize: '0.875rem',
             fontWeight: 'bold',
@@ -191,7 +191,7 @@ export default function HomePage(): React.ReactElement {
             padding: '0.5rem 0.75rem',
           }}
         >
-          [settings]
+          settings
         </button>
         <button
           type='button'
@@ -211,7 +211,7 @@ export default function HomePage(): React.ReactElement {
             transition: 'all 0.2s',
           }}
         >
-          [list]
+          list
         </button>
       </div>
 
