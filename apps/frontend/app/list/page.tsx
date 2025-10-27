@@ -29,6 +29,7 @@ export default function ListPage(): React.ReactElement {
   const [isCheckingAuth, setIsCheckingAuth] = useState(true);
   const [collections, setCollections] = useState<FlashcardCollection[]>([]);
   const [selectedCollection, setSelectedCollection] = useState<string>('');
+  const [tagFilter, setTagFilter] = useState<string>('');
 
   useEffect(() => {
     // Check for valid user session
@@ -69,6 +70,14 @@ export default function ListPage(): React.ReactElement {
   }
 
   const currentCollection = collections.find((c) => c.name === selectedCollection);
+
+  // Filter items by tag
+  const filteredItems = currentCollection?.items.filter((item) => {
+    if (!tagFilter.trim()) return true;
+    if (!item.tags || item.tags.length === 0) return false;
+    const searchTerm = tagFilter.toLowerCase();
+    return item.tags.some((tag) => tag.toLowerCase().includes(searchTerm));
+  });
 
   return (
     <div
@@ -164,13 +173,17 @@ export default function ListPage(): React.ReactElement {
           <select
             id='collection-select'
             value={selectedCollection}
-            onChange={(e) => setSelectedCollection(e.target.value)}
+            onChange={(e) => {
+              setSelectedCollection(e.target.value);
+              setTagFilter('');
+            }}
             style={{
               backgroundColor: '#2a2a2a',
               border: '2px solid #444',
               borderRadius: '8px',
               color: '#ffffff',
               fontSize: '1.125rem',
+              marginBottom: '1rem',
               padding: '0.75rem',
               width: '100%',
             }}
@@ -181,11 +194,50 @@ export default function ListPage(): React.ReactElement {
               </option>
             ))}
           </select>
+
+          <label
+            htmlFor='tag-filter'
+            style={{
+              display: 'block',
+              fontSize: '1.25rem',
+              fontWeight: '600',
+              marginBottom: '0.75rem',
+            }}
+          >
+            Filter by Tag
+          </label>
+          <input
+            id='tag-filter'
+            type='text'
+            value={tagFilter}
+            onChange={(e) => setTagFilter(e.target.value)}
+            placeholder='Type to filter by tag...'
+            style={{
+              backgroundColor: '#2a2a2a',
+              border: '2px solid #444',
+              borderRadius: '8px',
+              color: '#ffffff',
+              fontSize: '1.125rem',
+              padding: '0.75rem',
+              width: '100%',
+            }}
+          />
+          {tagFilter && filteredItems && (
+            <div
+              style={{
+                color: '#ccc',
+                fontSize: '0.875rem',
+                marginTop: '0.5rem',
+              }}
+            >
+              Showing {filteredItems.length} of {currentCollection?.items.length || 0} items
+            </div>
+          )}
         </div>
 
-        {currentCollection && (
+        {filteredItems && filteredItems.length > 0 && (
           <div>
-            {currentCollection.items.map((item, index) => (
+            {filteredItems.map((item, index) => (
               <div key={`${item.main}-${index}`}>
                 <div
                   style={{
@@ -251,7 +303,7 @@ export default function ListPage(): React.ReactElement {
                     </div>
                   )}
                 </div>
-                {index < currentCollection.items.length - 1 && (
+                {index < filteredItems.length - 1 && (
                   <hr
                     style={{
                       border: 'none',
