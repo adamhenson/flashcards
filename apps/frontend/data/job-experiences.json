@@ -55,6 +55,28 @@
         "**Takeaway**: Weighing the cost of contributing to open source vs building a custom solution was a good decision. It was a win-win for all involved."
       ],
       "tags": ["initiative"]
+    },
+    {
+      "main": "Shutterstock: CMS Driven Marketing Pages",
+      "subs": [
+        "**Situation**: We were building a CMS driven system for marketing team to quickly and easily build pages.",
+        "**Task**: I was a main contributor in architecting and building this system and one piece I took on was a mechanism that essentially mapped data to React components and rendered them.",
+        "**Action**: I built the mechanism by matching content types to components and rendering them with the data. The mechanism worked by recursively assembling and rendering the React tree. I shared with the team what I was working on in daily standups, covered the content mapper with tests and wrote solid documentation.",
+        "**Result**: The content mapper successfully powered thousands of pages and was a key part of the system. However, despite my efforts to elaborately document and test, I was the content mapper owner. Others were still confused by it.",
+        "**Takeaway**: Even when you think you are taking the best approach independently, it's important to share your approach early, get buy-in and ideally try to encourage others to contribute."
+      ],
+      "tags": ["accountability", "collaboration"]
+    },
+    {
+      "main": "Assured: E2E Tests",
+      "subs": [
+        "**Situation**: We were building a CMS driven system for marketing team to quickly and easily build pages.",
+        "**Task**: I was a main contributor in architecting and building this system and one piece I took on was a mechanism that essentially mapped data to React components and rendered them.",
+        "**Action**: I built the mechanism by matching content types to components and rendering them with the data. The mechanism worked by recursively assembling and rendering the React tree. I shared with the team what I was working on in daily standups, covered the content mapper with tests and wrote solid documentation.",
+        "**Result**: The content mapper successfully powered thousands of pages and was a key part of the system. However, despite my efforts to elaborately document and test, I was the content mapper owner. Others were still confused by it.",
+        "**Takeaway**: Even when you think you are taking the best approach independently, it's important to share your approach early, get buy-in and ideally try to encourage others to contribute."
+      ],
+      "tags": ["accountability", "collaboration"]
     }
   ]
 }

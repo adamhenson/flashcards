@@ -55,12 +55,29 @@ export default function HomePage(): React.ReactElement {
     // Load saved config
     const config = loadConfig();
     if (config) {
-      // Filter saved collections to only include those user has access to
-      const accessibleCollections = config.collections.filter((c) =>
-        allowedCollections.some((ac) => ac.name === c.collectionName)
-      );
-      if (accessibleCollections.length > 0) {
-        setSelectedCollections(accessibleCollections);
+      // Handle backward compatibility: convert old format to new format
+      let collectionsToUse: CollectionInterval[] = [];
+
+      if (config.collections && Array.isArray(config.collections)) {
+        // New format: filter saved collections to only include those user has access to
+        collectionsToUse = config.collections.filter((c) =>
+          allowedCollections.some((ac) => ac.name === c.collectionName)
+        );
+      } else if ('collectionName' in config && 'intervalSeconds' in config) {
+        // Old format: convert to new format
+        const hasAccess = allowedCollections.some((c) => c.name === config.collectionName);
+        if (hasAccess) {
+          collectionsToUse = [
+            {
+              collectionName: config.collectionName as string,
+              intervalSeconds: config.intervalSeconds as number,
+            },
+          ];
+        }
+      }
+
+      if (collectionsToUse.length > 0) {
+        setSelectedCollections(collectionsToUse);
       } else if (allowedCollections[0]) {
         // Default to first collection if no saved config is accessible
         setSelectedCollections([
