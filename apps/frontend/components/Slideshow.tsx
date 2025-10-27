@@ -86,7 +86,7 @@ export default function Slideshow(): React.ReactElement {
     // Initialize first card from first collection
     const firstCollectionName = config.collections[0].collectionName;
     const firstCards = cardsByCollection.get(firstCollectionName);
-    if (firstCards && firstCards[0]) {
+    if (firstCards?.[0]) {
       const firstColor =
         savedColor || palette.colors[Math.floor(Math.random() * palette.colors.length)];
       setCurrentColor(firstColor);
