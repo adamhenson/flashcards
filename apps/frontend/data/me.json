@@ -6,9 +6,15 @@
       "subs": [
         "**Staff-level Frontend Architect** with nearly 20 years of experience building performant, user-focused web applications across startups, e-commerce, and analytics platforms.",
         "**Led frontend architecture at Assured**, defining design systems, CI/CD pipelines, and developer tooling that scaled across multiple products and teams.",
-        "**Previously **Principal Engineer at Moat (acquired by Oracle)**, where I drove frontend architecture for a high-traffic analytics dashboard used by global advertisers.",
+        "**Previously Principal Engineer at Moat (acquired by Oracle)**, where I drove frontend architecture for a high-traffic analytics dashboard used by global advertisers.",
         "**Earlier e-commerce leadership at Paperless Post and J.Crew** — improving checkout, performance, and accessibility for millions of users.",
         "**Hands-on with React, TypeScript, and modern tooling**, but equally focused on developer experience, design systems, and collaboration with product and design to ship fast, maintainable frontends."
+      ]
+    },
+    {
+      "main": "Short and Sweet",
+      "subs": [
+        "I’m a frontend architect who thrives at the intersection of design systems, performance, and developer experience — building frameworks that let teams ship great products at scale."
       ]
     }
   ]
