@@ -70,11 +70,11 @@
     {
       "main": "Assured: E2E Tests",
       "subs": [
-        "**Situation**: We were building a CMS driven system for marketing team to quickly and easily build pages.",
-        "**Task**: I was a main contributor in architecting and building this system and one piece I took on was a mechanism that essentially mapped data to React components and rendered them.",
-        "**Action**: I built the mechanism by matching content types to components and rendering them with the data. The mechanism worked by recursively assembling and rendering the React tree. I shared with the team what I was working on in daily standups, covered the content mapper with tests and wrote solid documentation.",
-        "**Result**: The content mapper successfully powered thousands of pages and was a key part of the system. However, despite my efforts to elaborately document and test, I was the content mapper owner. Others were still confused by it.",
-        "**Takeaway**: Even when you think you are taking the best approach independently, it's important to share your approach early, get buy-in and ideally try to encourage others to contribute."
+        "**Situation**: In a rapid growth phase, many incidents were occurring.",
+        "**Task**: The Head of Engineering tasked me to introduce E2E tests. Details and scope were vague for me to define and run with.",
+        "**Action**: I broke down the work into 3 phases, reviewed with the Head of Engineering and the app platform team. I also wrote-up a system design document and got feedback from the team. I polled EMs and moved forward with the work. The focus was getting past previous failed attempts by introducing a system that fulfilled all aspects of the goals. I successfully built a system in Playwright, introduced coverage of critical paths, and evangelized across the organization.",
+        "**Result**: Team members were excited to contribute right away after demo-ing",
+        "**Takeaway**: Demos were powerful in evangelizing."
       ],
       "tags": ["accountability", "collaboration"]
     }

@@ -98,21 +98,24 @@ export default function Slideshow(): React.ReactElement {
     const currentCollectionConfig = collectionIntervals[currentCollectionIndex];
     if (!currentCollectionConfig) return;
 
-    const interval = setInterval(() => {
-      // Get current collection's cards
-      const currentCards = shuffledCardsByCollection.get(currentCollectionConfig.collectionName);
-      if (!currentCards) return;
-
-      // Get current index for this collection
-      const currentCardIndex =
-        currentCardIndexByCollection.get(currentCollectionConfig.collectionName) || 0;
-
-      // Move to next card in current collection
-      const nextCardIndex = (currentCardIndex + 1) % currentCards.length;
-      const card = currentCards[nextCardIndex];
-
-      // Move to next collection
+    const timeout = setTimeout(() => {
+      // Move to next collection first
       const nextCollectionIndex = (currentCollectionIndex + 1) % collectionIntervals.length;
+      const nextCollectionConfig = collectionIntervals[nextCollectionIndex];
+
+      // Get next collection's cards
+      const nextCards = shuffledCardsByCollection.get(nextCollectionConfig.collectionName);
+      if (!nextCards) return;
+
+      // Get current index for next collection
+      const currentCardIndex =
+        currentCardIndexByCollection.get(nextCollectionConfig.collectionName) || 0;
+
+      // Get the card to show
+      const card = nextCards[currentCardIndex];
+
+      // Move to next card index for this collection
+      const nextCardIndex = (currentCardIndex + 1) % nextCards.length;
 
       const color = colors[Math.floor(Math.random() * colors.length)];
 
@@ -125,10 +128,10 @@ export default function Slideshow(): React.ReactElement {
         setCurrentColor(color);
         setCurrentCollectionIndex(nextCollectionIndex);
 
-        // Update the index for this collection
+        // Update the index for next collection
         setCurrentCardIndexByCollection((prev) => {
           const newMap = new Map(prev);
-          newMap.set(currentCollectionConfig.collectionName, nextCardIndex);
+          newMap.set(nextCollectionConfig.collectionName, nextCardIndex);
           return newMap;
         });
 
@@ -141,7 +144,7 @@ export default function Slideshow(): React.ReactElement {
       }, 200);
     }, currentCollectionConfig.intervalSeconds * 1000);
 
-    return () => clearInterval(interval);
+    return () => clearTimeout(timeout);
   }, [
     collectionIntervals,
     shuffledCardsByCollection,
