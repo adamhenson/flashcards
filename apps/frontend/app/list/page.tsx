@@ -71,12 +71,20 @@ export default function ListPage(): React.ReactElement {
 
   const currentCollection = collections.find((c) => c.name === selectedCollection);
 
-  // Filter items by tag
+  // Filter items by tag or main field
   const filteredItems = currentCollection?.items.filter((item) => {
     if (!tagFilter.trim()) return true;
-    if (!item.tags || item.tags.length === 0) return false;
     const searchTerm = tagFilter.toLowerCase();
-    return item.tags.some((tag) => tag.toLowerCase().includes(searchTerm));
+
+    // Check if main field matches
+    if (item.main.toLowerCase().includes(searchTerm)) return true;
+
+    // Check if any tag matches
+    if (item.tags && item.tags.length > 0) {
+      return item.tags.some((tag) => tag.toLowerCase().includes(searchTerm));
+    }
+
+    return false;
   });
 
   return (
@@ -204,14 +212,14 @@ export default function ListPage(): React.ReactElement {
               marginBottom: '0.75rem',
             }}
           >
-            Filter by Tag
+            Search Items
           </label>
           <input
             id='tag-filter'
             type='text'
             value={tagFilter}
             onChange={(e) => setTagFilter(e.target.value)}
-            placeholder='Type to filter by tag...'
+            placeholder='Search by title or tag...'
             style={{
               backgroundColor: '#2a2a2a',
               border: '2px solid #444',
