@@ -169,29 +169,21 @@ export default function Slideshow(): React.ReactElement {
             >
               {currentCard.main}
             </h1>
-            <ul
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '0.75rem',
-                listStylePosition: 'outside',
-                paddingLeft: '1.5rem',
-              }}
-            >
-              {currentCard.subs.map((sub) => (
-                <li
-                  key={sub}
-                  style={{
-                    fontSize: 'clamp(1rem, 2.5vw, 2rem)',
-                    fontWeight:
-                      'clamp(400, calc(400 + (900 - 400) * ((100vw - 20rem) / (100 - 20))), 900)',
-                    lineHeight: 1.2,
-                  }}
-                >
-                  {sub}
-                </li>
-              ))}
-            </ul>
+            {currentCard.subs.map((sub) => (
+              <p
+                key={sub}
+                style={{
+                  borderBottom: `0.1875rem solid currentColor`,
+                  fontSize: 'clamp(1rem, 2.5vw, 2rem)',
+                  fontWeight:
+                    'clamp(400, calc(400 + (900 - 400) * ((100vw - 20rem) / (100 - 20))), 900)',
+                  lineHeight: 1.2,
+                  paddingBottom: '0.75rem',
+                }}
+              >
+                {sub}
+              </p>
+            ))}
           </div>
         </div>
       )}

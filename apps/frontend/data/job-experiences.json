@@ -15,7 +15,8 @@
     {
       "main": "Assured: Design System Icons",
       "subs": [
-        "Task: In building Sidekick, workflow steps were designed with new icons.",
+        "Situation: In building Sidekick, workflow steps were designed with new icons.",
+        "Task: Convert icons to components that can be dynamically determined usage.",
         "Action: Worked with the team post-daily standups and async in Slack to define a new component library with icon components that can be easily generated. I had already identified the need for a standardized approach before Sidekick and had opened a shared document in which I already had some feedback. This was useful in pushing forward rapidly.",
         "Result: Was able to rollout over 100 icons with a single command and provided ease of use and streamlined process for the team and future developers.",
         "Takeaway: In a rapid-paced environment, being able to iterate quickly and communicate effectively with the team is key. This was a great example of how a small amount of upfront work can pay off big time."
@@ -25,6 +26,7 @@
     {
       "main": "Assured: Design System Component Library",
       "subs": [
+        "Situation: Identified new design across the board for Sidekick.",
         "Task: In building Sidekick, in close works with the design team, I led the effort to create an internal component library package with Storybook and Chromatic.",
         "Action: Despite rapid development cycles, I was able to pre-emptively propose, draw agreement with the team, and evangelize the component library. The close working with design team was key in establishing a component driven Figma design mirroring the design system",
         "Result: The component library was a success and is used by the team to this day. It is a key part of the Sidekick developer experience.",
@@ -35,6 +37,7 @@
     {
       "main": "Assured: Custom vs Trunk-Based Branching and Releasing",
       "subs": [
+        "Situation: Head of Engineering proposed a new custom branching and release process.",
         "Task: Assist with introduction of new custom branching and release process",
         "Action: Prepared for app platform meeting in reviewing new branching strategy and release process. Inquired about comparison with trunk-based. Provided feedback and recommendations in the document. The angle from Head of Engineering was determined to move on it ASAP. Head of Engineering disagreed confidently and rejected the proposal. I still showed support for his decision and tried to make the most of the situation, by contributing to the process (changelog).",
         "Result: Although the result wasn't good, I learned to navigate a difficult situation and contribute to the process in a positive way.",
