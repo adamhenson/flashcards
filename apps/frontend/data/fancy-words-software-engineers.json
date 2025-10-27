@@ -10,6 +10,38 @@
       ]
     },
     {
+      "main": "Normalization (nor-muh-luh-ZAY-shun) – noun",
+      "subs": [
+        "The process of organizing data in a database to reduce redundancy and improve integrity.",
+        "a) Database normalization made our schema cleaner and easier to query.",
+        "b) He explained normalization like folding laundry—everything in the right drawer."
+      ]
+    },
+    {
+      "main": "Denormalization (dee-nor-muh-luh-ZAY-shun) – noun",
+      "subs": [
+        "The deliberate process of adding redundancy to improve read performance or simplify queries.",
+        "a) We used denormalization to make analytics queries faster.",
+        "b) Denormalization felt wrong at first, but the latency drop was worth it."
+      ]
+    },
+    {
+      "main": "Serialization (seer-ee-uh-luh-ZAY-shun) – noun",
+      "subs": [
+        "The process of converting data structures into a format that can be stored or transmitted.",
+        "a) We handle persistence through JSON serialization and S3 storage.",
+        "b) He joked that serialization is just ‘flattening data with extra steps.’"
+      ]
+    },
+    {
+      "main": "Event Bus (ih-VENT bus) – noun",
+      "subs": [
+        "A communication system that enables different services or components to publish and subscribe to events.",
+        "a) The event bus decouples our microservices cleanly.",
+        "b) Once you add an event bus, everything suddenly starts talking too much."
+      ]
+    },
+    {
       "main": "Modular (MOJ-uh-ler) – adjective",
       "subs": [
         "Composed of standardized, interchangeable parts or units.",

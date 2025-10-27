@@ -2,36 +2,45 @@
   "name": "Job Experiences",
   "items": [
     {
-      "main": "Project Phoenix - Lead Developer (2022-2023)",
+      "main": "Assured: GitLab CI Backend Integration Intermittent Test Failures",
       "subs": [
-        "Led a team of 5 engineers to rebuild the core platform from monolith to microservices",
-        "Reduced deployment time from 2 hours to 15 minutes through CI/CD improvements",
-        "Implemented real-time analytics that increased user engagement by 40%",
-        "Mentored junior developers on best practices and code review processes",
-        "Collaborated with product team to define technical requirements and roadmap"
+        "Situation: Incident was raised in which intermittent backend integration tests became more common, blocking an important release. I offered jump in to lend a hand while my manager was out, despite not being familiar with the tests.",
+        "Task: Unblock the release.",
+        "Action: Tracked down failing tests, identified the main contributors, and worked with their team to fix the issues. Although more test runs were passing, I was troubled by not knowing when failure rates would be normal - without a baseline... when to close the incident. Since it was on a Friday, I decided to spend the weekend building a tool to surface a dashboard of failure rates in GitLab CI. It downloaded and parsed JUnit XML artifacts, stored in a JSON file, committed via GitLab CI scheduled pipeline.",
+        "Result: Over-communicating the status was key in looping key people of the release who greatly appreciated and even gave me a 'Cheers for peers'. The tool provided a view into past failure rates and surfaced a chart that painted the picture clearly.",
+        "Takeaway: Using AI to build a quick tool was powerful. People loved the over-communication."
       ],
-      "tags": ["category", "important", "review"]
+      "tags": ["accountability", "initiative"]
     },
     {
-      "main": "Database Migration Initiative - Senior Engineer (2021)",
+      "main": "Assured: Design System Icons",
       "subs": [
-        "Designed and executed zero-downtime migration from PostgreSQL to distributed database",
-        "Handled 50TB of data migration while maintaining 99.99% uptime SLA",
-        "Created comprehensive rollback procedures and disaster recovery plans",
-        "Reduced query latency by 70% through optimized indexing strategies",
-        "Documented entire process for future reference and team knowledge sharing"
+        "Task: In building Sidekick, workflow steps were designed with new icons.",
+        "Action: Worked with the team post-daily standups and async in Slack to define a new component library with icon components that can be easily generated. I had already identified the need for a standardized approach before Sidekick and had opened a shared document in which I already had some feedback. This was useful in pushing forward rapidly.",
+        "Result: Was able to rollout over 100 icons with a single command and provided ease of use and streamlined process for the team and future developers.",
+        "Takeaway: In a rapid-paced environment, being able to iterate quickly and communicate effectively with the team is key. This was a great example of how a small amount of upfront work can pay off big time."
       ],
-      "tags": ["architecture", "design"]
+      "tags": ["architecture", "technical competency", "collaboration"]
     },
     {
-      "main": "Customer Portal Redesign - Full Stack Engineer (2020)",
+      "main": "Assured: Design System Component Library",
       "subs": [
-        "Built responsive React dashboard that improved customer satisfaction scores by 35%",
-        "Integrated with 8 different third-party APIs for unified data presentation",
-        "Implemented accessibility features achieving WCAG 2.1 AA compliance",
-        "Reduced support tickets by 50% through intuitive self-service features",
-        "Collaborated with UX team conducting user research and usability testing"
-      ]
+        "Task: In building Sidekick, in close works with the design team, I led the effort to create an internal component library package with Storybook and Chromatic.",
+        "Action: Despite rapid development cycles, I was able to pre-emptively propose, draw agreement with the team, and evangelize the component library. The close working with design team was key in establishing a component driven Figma design mirroring the design system",
+        "Result: The component library was a success and is used by the team to this day. It is a key part of the Sidekick developer experience.",
+        "Takeaway: In a rapid-paced environment, being able to iterate quickly and communicate effectively with the team is key. This was a great example of how a small amount of upfront work can pay off big time."
+      ],
+      "tags": ["architecture", "technical competency", "collaboration"]
+    },
+    {
+      "main": "Assured: Custom vs Trunk-Based Branching and Releasing",
+      "subs": [
+        "Task: Assist with introduction of new custom branching and release process",
+        "Action: Prepared for app platform meeting in reviewing new branching strategy and release process. Inquired about comparison with trunk-based. Provided feedback and recommendations in the document. The angle from Head of Engineering was determined to move on it ASAP. Head of Engineering disagreed confidently and rejected the proposal. I still showed support for his decision and tried to make the most of the situation, by contributing to the process (changelog).",
+        "Result: Although the result wasn't good, I learned to navigate a difficult situation and contribute to the process in a positive way.",
+        "Takeaway: Sometimes you have to navigate difficult situations and contribute to the process in a positive way."
+      ],
+      "tags": ["conflict resolution", "collaboration"]
     }
   ]
 }
