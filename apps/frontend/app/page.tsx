@@ -6,7 +6,7 @@ import { getAllowedCollections, getSkipUserCollections } from '@/lib/auth';
 import { getAllCollections } from '@/lib/collections';
 import { COLOR_PALETTES } from '@/lib/palettes';
 import { loadConfig, loadUserSession, saveConfig } from '@/lib/storage';
-import type { FlashcardCollection, SlideshowConfig } from '@/types/flashcard';
+import type { CollectionInterval, FlashcardCollection, SlideshowConfig } from '@/types/flashcard';
 
 /**
  * Main configuration page for setting up the flashcards slideshow
@@ -15,8 +15,7 @@ export default function HomePage(): React.ReactElement {
   const router = useRouter();
   const [isCheckingAuth, setIsCheckingAuth] = useState(true);
   const [collections, setCollections] = useState<FlashcardCollection[]>([]);
-  const [collectionName, setCollectionName] = useState<string>('');
-  const [intervalSeconds, setIntervalSeconds] = useState<number>(5);
+  const [selectedCollections, setSelectedCollections] = useState<CollectionInterval[]>([]);
   const [paletteTheme, setPaletteTheme] = useState<string>('earth');
 
   useEffect(() => {
@@ -51,26 +50,59 @@ export default function HomePage(): React.ReactElement {
     }
 
     setCollections(allowedCollections);
-    setCollectionName(allowedCollections[0]?.name || '');
     setIsCheckingAuth(false);
 
     // Load saved config
     const config = loadConfig();
     if (config) {
-      // Only use saved collection if user has access to it
-      const hasAccess = allowedCollections.some((c) => c.name === config.collectionName);
-      if (hasAccess) {
-        setCollectionName(config.collectionName);
+      // Filter saved collections to only include those user has access to
+      const accessibleCollections = config.collections.filter((c) =>
+        allowedCollections.some((ac) => ac.name === c.collectionName)
+      );
+      if (accessibleCollections.length > 0) {
+        setSelectedCollections(accessibleCollections);
+      } else if (allowedCollections[0]) {
+        // Default to first collection if no saved config is accessible
+        setSelectedCollections([
+          { collectionName: allowedCollections[0].name, intervalSeconds: 5 },
+        ]);
       }
-      setIntervalSeconds(config.intervalSeconds);
       setPaletteTheme(config.paletteTheme);
+    } else if (allowedCollections[0]) {
+      // Default to first collection
+      setSelectedCollections([{ collectionName: allowedCollections[0].name, intervalSeconds: 5 }]);
     }
   }, [router]);
 
+  const handleToggleCollection = ({ collectionName }: { collectionName: string }): void => {
+    const exists = selectedCollections.find((c) => c.collectionName === collectionName);
+    if (exists) {
+      setSelectedCollections(
+        selectedCollections.filter((c) => c.collectionName !== collectionName)
+      );
+    } else {
+      setSelectedCollections([...selectedCollections, { collectionName, intervalSeconds: 5 }]);
+    }
+  };
+
+  const handleIntervalChange = ({
+    collectionName,
+    intervalSeconds,
+  }: {
+    collectionName: string;
+    intervalSeconds: number;
+  }): void => {
+    setSelectedCollections(
+      selectedCollections.map((c) =>
+        c.collectionName === collectionName ? { ...c, intervalSeconds } : c
+      )
+    );
+  };
+
   const handleStart = (): void => {
+    if (selectedCollections.length === 0) return;
     const config: SlideshowConfig = {
-      collectionName,
-      intervalSeconds,
+      collections: selectedCollections,
       paletteTheme,
     };
     saveConfig({ config });
@@ -135,62 +167,96 @@ export default function HomePage(): React.ReactElement {
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <label
-              htmlFor='collection-select'
+            <div
               style={{
                 fontSize: '1.5rem',
                 fontWeight: '600',
               }}
             >
-              Choose a Collection
-            </label>
-            <select
-              id='collection-select'
-              value={collectionName}
-              onChange={(e) => setCollectionName(e.target.value)}
-              style={{
-                backgroundColor: '#2a2a2a',
-                border: '2px solid #444',
-                borderRadius: '8px',
-                color: '#ffffff',
-                fontSize: '1.25rem',
-                padding: '1rem',
-              }}
-            >
-              {collections.map((collection) => (
-                <option key={collection.name} value={collection.name}>
-                  {collection.name}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <label
-              htmlFor='interval-input'
-              style={{
-                fontSize: '1.5rem',
-                fontWeight: '600',
-              }}
-            >
-              Interval (seconds)
-            </label>
-            <input
-              id='interval-input'
-              type='number'
-              min='1'
-              max='60'
-              value={intervalSeconds}
-              onChange={(e) => setIntervalSeconds(Number(e.target.value))}
-              style={{
-                backgroundColor: '#2a2a2a',
-                border: '2px solid #444',
-                borderRadius: '8px',
-                color: '#ffffff',
-                fontSize: '1.25rem',
-                padding: '1rem',
-              }}
-            />
+              Choose Collections
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              {collections.map((collection) => {
+                const isSelected = selectedCollections.some(
+                  (c) => c.collectionName === collection.name
+                );
+                return (
+                  <div
+                    key={collection.name}
+                    style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}
+                  >
+                    <button
+                      type='button'
+                      onClick={() => handleToggleCollection({ collectionName: collection.name })}
+                      style={{
+                        alignItems: 'center',
+                        backgroundColor: isSelected ? '#2a9d8f' : '#2a2a2a',
+                        border: `2px solid ${isSelected ? '#2a9d8f' : '#444'}`,
+                        borderRadius: '8px',
+                        color: '#ffffff',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        fontSize: '1.125rem',
+                        fontWeight: isSelected ? 'bold' : 'normal',
+                        justifyContent: 'space-between',
+                        padding: '1rem',
+                        textAlign: 'left',
+                        transition: 'all 0.2s',
+                      }}
+                    >
+                      <span>{collection.name}</span>
+                      <span>{isSelected ? '✓' : ''}</span>
+                    </button>
+                    {isSelected && (
+                      <div
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '0.75rem',
+                          paddingLeft: '1rem',
+                        }}
+                      >
+                        <label
+                          htmlFor={`interval-${collection.name}`}
+                          style={{
+                            color: '#ccc',
+                            fontSize: '1rem',
+                            whiteSpace: 'nowrap',
+                          }}
+                        >
+                          Interval (seconds):
+                        </label>
+                        <input
+                          id={`interval-${collection.name}`}
+                          type='number'
+                          min='1'
+                          max='60'
+                          value={
+                            selectedCollections.find((c) => c.collectionName === collection.name)
+                              ?.intervalSeconds || 5
+                          }
+                          onChange={(e) =>
+                            handleIntervalChange({
+                              collectionName: collection.name,
+                              intervalSeconds: Number(e.target.value),
+                            })
+                          }
+                          style={{
+                            backgroundColor: '#2a2a2a',
+                            border: '2px solid #444',
+                            borderRadius: '8px',
+                            color: '#ffffff',
+                            fontSize: '1rem',
+                            padding: '0.5rem',
+                            width: '80px',
+                          }}
+                        />
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -252,22 +318,28 @@ export default function HomePage(): React.ReactElement {
         <button
           type='button'
           onClick={handleStart}
+          disabled={selectedCollections.length === 0}
           style={{
-            backgroundColor: '#4CAF50',
+            backgroundColor: selectedCollections.length === 0 ? '#666' : '#4CAF50',
             border: 'none',
             borderRadius: '8px',
             color: '#ffffff',
-            cursor: 'pointer',
+            cursor: selectedCollections.length === 0 ? 'not-allowed' : 'pointer',
             fontSize: '1.5rem',
             fontWeight: 'bold',
+            opacity: selectedCollections.length === 0 ? 0.5 : 1,
             padding: '1.5rem',
             transition: 'background-color 0.2s',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = '#45a049';
+            if (selectedCollections.length > 0) {
+              e.currentTarget.style.backgroundColor = '#45a049';
+            }
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = '#4CAF50';
+            if (selectedCollections.length > 0) {
+              e.currentTarget.style.backgroundColor = '#4CAF50';
+            }
           }}
         >
           Start Slideshow

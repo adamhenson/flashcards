@@ -28,14 +28,22 @@ export type FlashcardCollection = {
 };
 
 /**
+ * Collection with interval configuration
+ */
+export type CollectionInterval = {
+  /** Name of the collection */
+  collectionName: string;
+
+  /** Interval in seconds for this collection */
+  intervalSeconds: number;
+};
+
+/**
  * User configuration for the slideshow
  */
 export type SlideshowConfig = {
-  /** Name of the selected collection */
-  collectionName: string;
-
-  /** Interval in seconds between flashcards */
-  intervalSeconds: number;
+  /** Array of collections with their intervals */
+  collections: CollectionInterval[];
 
   /** Selected color palette theme */
   paletteTheme: string;

@@ -6,7 +6,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { getCollectionByName } from '@/lib/collections';
 import { COLOR_PALETTES, DARK_TEXT_COLORS, LIGHT_TEXT_COLORS } from '@/lib/palettes';
 import { loadConfig, loadLastColor, saveLastColor } from '@/lib/storage';
-import type { FlashcardItem } from '@/types/flashcard';
+import type { CollectionInterval, FlashcardItem } from '@/types/flashcard';
 
 /**
  * Parse markdown bold syntax (**text**) and convert to React elements
@@ -36,48 +36,84 @@ export default function Slideshow(): React.ReactElement {
   const [currentColor, setCurrentColor] = useState<string>(initialColor);
   const [isVisible, setIsVisible] = useState(true);
   const [isPaused, setIsPaused] = useState(false);
-  const [shuffledCards, setShuffledCards] = useState<FlashcardItem[]>([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [collectionIntervals, setCollectionIntervals] = useState<CollectionInterval[]>([]);
+  const [shuffledCardsByCollection, setShuffledCardsByCollection] = useState<
+    Map<string, FlashcardItem[]>
+  >(new Map());
+  const [currentCollectionIndex, setCurrentCollectionIndex] = useState(0);
+  const [currentCardIndexByCollection, setCurrentCardIndexByCollection] = useState<
+    Map<string, number>
+  >(new Map());
   const [colors, setColors] = useState<string[]>([]);
 
   useEffect(() => {
     const config = loadConfig();
-    if (!config) {
+    if (!config || !config.collections || config.collections.length === 0) {
       router.push('/');
       return;
     }
 
-    const collection = getCollectionByName({ name: config.collectionName });
-    if (!collection) {
+    // Load and shuffle cards for each collection
+    const cardsByCollection = new Map<string, FlashcardItem[]>();
+    const indexByCollection = new Map<string, number>();
+
+    for (const collectionConfig of config.collections) {
+      const collection = getCollectionByName({ name: collectionConfig.collectionName });
+      if (collection) {
+        const shuffled = [...collection.items].sort(() => Math.random() - 0.5);
+        cardsByCollection.set(collectionConfig.collectionName, shuffled);
+        indexByCollection.set(collectionConfig.collectionName, 0);
+      }
+    }
+
+    if (cardsByCollection.size === 0) {
       router.push('/');
       return;
     }
 
-    // Shuffle cards
-    const shuffled = [...collection.items].sort(() => Math.random() - 0.5);
-    setShuffledCards(shuffled);
+    setCollectionIntervals(config.collections);
+    setShuffledCardsByCollection(cardsByCollection);
+    setCurrentCardIndexByCollection(indexByCollection);
 
     // Set up colors
     const palette = COLOR_PALETTES[config.paletteTheme];
     setColors(palette.colors);
 
-    // Initialize first card - use saved color if available
-    const firstColor =
-      savedColor || palette.colors[Math.floor(Math.random() * palette.colors.length)];
-    setCurrentColor(firstColor);
-    setCurrentCard(shuffled[0]);
-    setCurrentIndex(0);
+    // Initialize first card from first collection
+    const firstCollectionName = config.collections[0].collectionName;
+    const firstCards = cardsByCollection.get(firstCollectionName);
+    if (firstCards && firstCards[0]) {
+      const firstColor =
+        savedColor || palette.colors[Math.floor(Math.random() * palette.colors.length)];
+      setCurrentColor(firstColor);
+      setCurrentCard(firstCards[0]);
+      setCurrentCollectionIndex(0);
+    }
   }, [router, savedColor]);
 
   useEffect(() => {
-    if (shuffledCards.length === 0 || isPaused) return;
+    if (collectionIntervals.length === 0 || shuffledCardsByCollection.size === 0 || isPaused)
+      return;
 
-    const config = loadConfig();
-    if (!config) return;
+    const currentCollectionConfig = collectionIntervals[currentCollectionIndex];
+    if (!currentCollectionConfig) return;
 
     const interval = setInterval(() => {
-      const nextIndex = (currentIndex + 1) % shuffledCards.length;
-      const card = shuffledCards[nextIndex];
+      // Get current collection's cards
+      const currentCards = shuffledCardsByCollection.get(currentCollectionConfig.collectionName);
+      if (!currentCards) return;
+
+      // Get current index for this collection
+      const currentCardIndex =
+        currentCardIndexByCollection.get(currentCollectionConfig.collectionName) || 0;
+
+      // Move to next card in current collection
+      const nextCardIndex = (currentCardIndex + 1) % currentCards.length;
+      const card = currentCards[nextCardIndex];
+
+      // Move to next collection
+      const nextCollectionIndex = (currentCollectionIndex + 1) % collectionIntervals.length;
+
       const color = colors[Math.floor(Math.random() * colors.length)];
 
       // Fade out
@@ -87,7 +123,15 @@ export default function Slideshow(): React.ReactElement {
       setTimeout(() => {
         setCurrentCard(card);
         setCurrentColor(color);
-        setCurrentIndex(nextIndex);
+        setCurrentCollectionIndex(nextCollectionIndex);
+
+        // Update the index for this collection
+        setCurrentCardIndexByCollection((prev) => {
+          const newMap = new Map(prev);
+          newMap.set(currentCollectionConfig.collectionName, nextCardIndex);
+          return newMap;
+        });
+
         saveLastColor({ color });
 
         // Fade in
@@ -95,10 +139,17 @@ export default function Slideshow(): React.ReactElement {
           setIsVisible(true);
         }, 50);
       }, 200);
-    }, config.intervalSeconds * 1000);
+    }, currentCollectionConfig.intervalSeconds * 1000);
 
     return () => clearInterval(interval);
-  }, [shuffledCards, currentIndex, colors, isPaused]);
+  }, [
+    collectionIntervals,
+    shuffledCardsByCollection,
+    currentCollectionIndex,
+    currentCardIndexByCollection,
+    colors,
+    isPaused,
+  ]);
 
   const handleExit = useCallback((): void => {
     router.push('/');
