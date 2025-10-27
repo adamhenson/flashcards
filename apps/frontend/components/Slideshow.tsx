@@ -155,6 +155,7 @@ export default function Slideshow(): React.ReactElement {
               display: 'flex',
               flexDirection: 'column',
               gap: '0.75rem',
+              marginTop: '-4rem',
               maxWidth: '100rem',
               textAlign: 'left',
             }}
