@@ -175,6 +175,8 @@ export default function Slideshow(): React.ReactElement {
                 style={{
                   borderBottom: `0.1875rem solid currentColor`,
                   fontSize: 'clamp(1rem, 2.5vw, 2rem)',
+                  fontWeight:
+                    'clamp(400, calc(400 + (700 - 400) * ((100vw - 20rem) / (100 - 20))), 700)',
                   lineHeight: 1.2,
                   paddingBottom: '0.75rem',
                 }}
