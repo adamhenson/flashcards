@@ -28,12 +28,8 @@ const parseMarkdownBold = ({ text }: { text: string }): React.ReactNode[] => {
 export default function Slideshow(): React.ReactElement {
   const router = useRouter();
 
-  // Load saved color immediately since we're client-only
-  const savedColor = loadLastColor();
-  const initialColor = savedColor || '#264653';
-
   const [currentCard, setCurrentCard] = useState<FlashcardItem | null>(null);
-  const [currentColor, setCurrentColor] = useState<string>(initialColor);
+  const [currentColor, setCurrentColor] = useState<string>(() => loadLastColor() || '#264653');
   const [isVisible, setIsVisible] = useState(true);
   const [isPaused, setIsPaused] = useState(false);
   const [collectionIntervals, setCollectionIntervals] = useState<CollectionInterval[]>([]);
@@ -87,13 +83,10 @@ export default function Slideshow(): React.ReactElement {
     const firstCollectionName = config.collections[0].collectionName;
     const firstCards = cardsByCollection.get(firstCollectionName);
     if (firstCards?.[0]) {
-      const firstColor =
-        savedColor || palette.colors[Math.floor(Math.random() * palette.colors.length)];
-      setCurrentColor(firstColor);
       setCurrentCard(firstCards[0]);
       setCurrentCollectionIndex(0);
     }
-  }, [router, savedColor]);
+  }, [router]);
 
   useEffect(() => {
     if (collectionIntervals.length === 0 || shuffledCardsByCollection.size === 0 || isPaused)
