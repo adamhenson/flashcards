@@ -9,6 +9,20 @@ import { loadConfig, loadLastColor, saveLastColor } from '@/lib/storage';
 import type { FlashcardItem } from '@/types/flashcard';
 
 /**
+ * Parse markdown bold syntax (**text**) and convert to React elements
+ */
+const parseMarkdownBold = ({ text }: { text: string }): React.ReactNode[] => {
+  const parts = text.split(/(\*\*.*?\*\*)/g);
+  return parts.map((part) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      const content = part.slice(2, -2);
+      return <b key={content}>{content}</b>;
+    }
+    return part;
+  });
+};
+
+/**
  * Slideshow component that displays flashcards with cross-fade animations
  */
 export default function Slideshow(): React.ReactElement {
@@ -182,7 +196,7 @@ export default function Slideshow(): React.ReactElement {
                   paddingBottom: '0.75rem',
                 }}
               >
-                {sub}
+                {parseMarkdownBold({ text: sub })}
               </p>
             ))}
           </div>
