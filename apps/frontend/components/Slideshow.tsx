@@ -176,7 +176,7 @@ export default function Slideshow(): React.ReactElement {
                   borderBottom: `0.1875rem solid currentColor`,
                   fontSize: 'clamp(1rem, 2.5vw, 2rem)',
                   fontWeight:
-                    'clamp(400, calc(400 + (700 - 400) * ((100vw - 20rem) / (100 - 20))), 700)',
+                    'clamp(400, calc(400 + (900 - 400) * ((100vw - 20rem) / (100 - 20))), 900)',
                   lineHeight: 1.2,
                   paddingBottom: '0.75rem',
                 }}
@@ -209,8 +209,9 @@ export default function Slideshow(): React.ReactElement {
                 border: `0.1875rem solid ${getTextColor(currentColor)}`,
                 borderRadius: '0.5rem',
                 color: getTextColor(currentColor),
-                fontSize: '0.875rem',
-                fontWeight: 'bold',
+                fontSize: 'clamp(0.875rem, 1.5vw, 1.25rem)',
+                fontWeight:
+                  'clamp(700, calc(700 + (900 - 700) * ((100vw - 20rem) / (100 - 20))), 900)',
                 padding: '0.5rem 0.75rem',
               }}
             >
