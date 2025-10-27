@@ -161,10 +161,10 @@ export default function Slideshow(): React.ReactElement {
           >
             <h1
               style={{
-                fontSize: 'clamp(1.75rem, 4.5vw, 3.5rem)',
+                fontSize: 'clamp(1.75rem, 4.5vw, 2.75rem)',
                 fontWeight: 'bold',
                 lineHeight: 1.1,
-                marginBottom: '0.5rem',
+                marginBottom: 0,
               }}
             >
               {currentCard.main}
