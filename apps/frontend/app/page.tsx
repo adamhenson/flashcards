@@ -160,9 +160,61 @@ export default function HomePage(): React.ReactElement {
         minHeight: '100vh',
         justifyContent: 'center',
         padding: '2rem',
+        position: 'relative',
         width: '100vw',
       }}
     >
+      {/* Navigation buttons */}
+      <div
+        style={{
+          display: 'flex',
+          gap: '0.75rem',
+          position: 'fixed',
+          right: '1.5rem',
+          top: '1.5rem',
+          zIndex: 1000,
+        }}
+      >
+        <button
+          type='button'
+          style={{
+            alignItems: 'center',
+            backgroundColor: '#2a9d8f',
+            border: 'none',
+            borderRadius: '0.5rem',
+            color: '#ffffff',
+            cursor: 'default',
+            display: 'flex',
+            fontSize: '0.875rem',
+            fontWeight: 'bold',
+            gap: '0.375rem',
+            padding: '0.5rem 0.75rem',
+          }}
+        >
+          [settings]
+        </button>
+        <button
+          type='button'
+          onClick={() => router.push('/list')}
+          style={{
+            alignItems: 'center',
+            backgroundColor: '#000000',
+            border: 'none',
+            borderRadius: '0.5rem',
+            color: '#ffffff',
+            cursor: 'pointer',
+            display: 'flex',
+            fontSize: '0.875rem',
+            fontWeight: 'bold',
+            gap: '0.375rem',
+            padding: '0.5rem 0.75rem',
+            transition: 'all 0.2s',
+          }}
+        >
+          [list]
+        </button>
+      </div>
+
       <div
         style={{
           display: 'flex',
