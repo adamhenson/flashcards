@@ -48,6 +48,7 @@ export default function Slideshow(): React.ReactElement {
 
   useEffect(() => {
     const config = loadConfig();
+    console.log('Loaded config:', config);
     if (!config || !config.collections || config.collections.length === 0) {
       router.push('/');
       return;
@@ -59,12 +60,15 @@ export default function Slideshow(): React.ReactElement {
 
     for (const collectionConfig of config.collections) {
       const collection = getCollectionByName({ name: collectionConfig.collectionName });
+      console.log('Loading collection:', collectionConfig.collectionName, collection);
       if (collection) {
         const shuffled = [...collection.items].sort(() => Math.random() - 0.5);
         cardsByCollection.set(collectionConfig.collectionName, shuffled);
         indexByCollection.set(collectionConfig.collectionName, 0);
       }
     }
+
+    console.log('Cards by collection:', Array.from(cardsByCollection.keys()));
 
     if (cardsByCollection.size === 0) {
       router.push('/');
@@ -98,14 +102,24 @@ export default function Slideshow(): React.ReactElement {
     const currentCollectionConfig = collectionIntervals[currentCollectionIndex];
     if (!currentCollectionConfig) return;
 
+    console.log(
+      `Setting timeout for ${currentCollectionConfig.intervalSeconds}s for collection:`,
+      currentCollectionConfig.collectionName
+    );
+
     const timeout = setTimeout(() => {
       // Move to next collection first
       const nextCollectionIndex = (currentCollectionIndex + 1) % collectionIntervals.length;
       const nextCollectionConfig = collectionIntervals[nextCollectionIndex];
 
+      console.log('Moving to next collection:', nextCollectionConfig.collectionName);
+
       // Get next collection's cards
       const nextCards = shuffledCardsByCollection.get(nextCollectionConfig.collectionName);
-      if (!nextCards) return;
+      if (!nextCards) {
+        console.log('No cards found for collection:', nextCollectionConfig.collectionName);
+        return;
+      }
 
       // Get current index for next collection
       const currentCardIndex =
