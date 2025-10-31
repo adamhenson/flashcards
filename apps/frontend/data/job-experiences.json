@@ -26,7 +26,7 @@
     {
       "main": "Assured: Component Library & Storybook Integration",
       "subs": [
-        "**Impact**: Led creation of an internal React component library powering Sidekick; adoption across 6+ teams within 2 months.",
+        "**Impact**: Led creation of an internal React component library powering Sidekick; adoption across a team of 30 (at the time) within 1 month.",
         "**Situation**: A new product launch lacked reusable UI primitives and visual consistency.",
         "**Action**: Partnered with design to define a token-based system in Figma → Storybook → Chromatic. Established naming standards and code scaffolding via Nx.",
         "**Result**: Reduced UI defects by ~25% and enabled rapid prototyping for future apps.",
