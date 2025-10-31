@@ -1,0 +1,55 @@
+{
+  "name": "Behavioral Stories",
+  "items": [
+    {
+      "main": "Influence Without Authority",
+      "subs": [
+        "**Situation**: A new custom branching and release strategy was being pushed by leadership that I disagreed with based on scalability concerns.",
+        "**Action**: I gathered data comparing trunk-based development to the proposed model, documented trade-offs, and facilitated a calm, evidence-based discussion. Although my recommendation wasn’t chosen, I contributed by improving the changelog process and release documentation.",
+        "**Result**: The team appreciated the transparency and we avoided confusion during rollout. I built trust by staying collaborative even when overruled.",
+        "**Takeaway**: Influence often comes from credibility and communication — not authority. Maintaining respect and momentum mattered more than being ‘right.’"
+      ],
+      "tags": ["leadership", "communication", "collaboration", "influence"]
+    },
+    {
+      "main": "Scaling a Process or System",
+      "subs": [
+        "**Situation**: Our frontend teams were struggling with confidence in releases due to lack of end-to-end testing.",
+        "**Action**: I proposed, designed, and led a Playwright-based testing framework — rolling it out in three phases: proof of concept, integration into CI/CD, and org-wide adoption. I evangelized it with demos and Slack updates.",
+        "**Result**: Within three months, regressions dropped roughly 40%, and multiple teams began contributing new tests without central oversight.",
+        "**Takeaway**: Scaling isn’t just about technology — it’s about empowering other engineers to own the solution once the foundation is solid."
+      ],
+      "tags": ["testing", "leadership", "scale", "automation"]
+    },
+    {
+      "main": "Handling Ambiguity and Brutal Timelines",
+      "subs": [
+        "**Situation**: I was tasked with building a new Guided Photo Capture experience for vehicle claims, but requirements were vague and evolving daily.",
+        "**Action**: I used Storybook to rapidly prototype concepts, iterating with design and leadership in parallel. I built a browser-based ML prototype using TensorFlow and requestAnimationFrame for real-time object detection and framing feedback.",
+        "**Result**: Delivered the MVP ahead of deadline — it became a major differentiator, won an enterprise client deal, and led to my promotion.",
+        "**Takeaway**: When requirements are unclear, early prototypes and tight feedback loops convert ambiguity into momentum."
+      ],
+      "tags": ["innovation", "ambiguity", "machine learning", "delivery"]
+    },
+    {
+      "main": "High-Stakes Debugging / Incident Management",
+      "subs": [
+        "**Situation**: A key release was blocked by intermittent backend integration test failures, with no clear pattern or ownership.",
+        "**Action**: I volunteered to triage while leadership was out, analyzed failure logs, and built a small dashboard to visualize test reliability over time using GitLab CI artifacts and Node.js scripts.",
+        "**Result**: We identified root causes, unblocked the release, and reduced flaky test frequency by roughly one-third. The dashboard became a template for other teams.",
+        "**Takeaway**: Visibility is often the first step toward stability — sometimes the best debugging tool is the one you build yourself."
+      ],
+      "tags": ["debugging", "initiative", "visibility", "stability"]
+    },
+    {
+      "main": "Mentorship and Team Enablement",
+      "subs": [
+        "**Situation**: Several newer frontend engineers were struggling to onboard into a rapidly growing codebase and inconsistent UI patterns.",
+        "**Action**: I documented reusable patterns in Storybook, led small pairing sessions, and encouraged PR-based learning. I also pushed to standardize on component-driven development for all new features.",
+        "**Result**: Within weeks, onboarding time shortened noticeably, and new engineers were contributing confidently to shared components.",
+        "**Takeaway**: Mentorship doesn’t always mean formal management — small moments of knowledge-sharing can permanently shift a team’s trajectory."
+      ],
+      "tags": ["mentorship", "enablement", "collaboration", "leadership"]
+    }
+  ]
+}

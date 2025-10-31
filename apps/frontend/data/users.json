@@ -8,5 +8,5 @@
     }
   },
   "skipExpiryDays": 7,
-  "skipRestrictedCollections": ["Job Experiences", "About Me"]
+  "skipRestrictedCollections": ["Job Experiences", "About Me", "Behavioral Stories"]
 }

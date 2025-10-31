@@ -1,3 +1,4 @@
+import behavioralStories from '@/data/behavioral-stories.json';
 import fancyWordsAi from '@/data/fancy-words-ai.json';
 import fancyWordsGeneric from '@/data/fancy-words-generic.json';
 import fancyWordsSoftwareEngineers from '@/data/fancy-words-software-engineers.json';
@@ -17,6 +18,7 @@ export const getAllCollections = (): FlashcardCollection[] => {
     fancyWordsSoftwareEngineers as FlashcardCollection,
     fancyWordsSystemDesign as FlashcardCollection,
     jobExperiences as FlashcardCollection,
+    behavioralStories as FlashcardCollection,
   ];
 };
 
