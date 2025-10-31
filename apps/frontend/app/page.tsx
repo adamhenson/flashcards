@@ -16,7 +16,7 @@ export default function HomePage(): React.ReactElement {
   const [isCheckingAuth, setIsCheckingAuth] = useState(true);
   const [collections, setCollections] = useState<FlashcardCollection[]>([]);
   const [selectedCollections, setSelectedCollections] = useState<CollectionInterval[]>([]);
-  const [paletteTheme, setPaletteTheme] = useState<string>('earth');
+  const [paletteTheme, setPaletteTheme] = useState<string>('earthyJewel');
 
   useEffect(() => {
     // Check for valid user session
@@ -387,26 +387,26 @@ export default function HomePage(): React.ReactElement {
         <button
           type='button'
           onClick={handleStart}
-          disabled={selectedCollections.length === 0}
+          disabled={selectedCollections.length === 0 || !paletteTheme}
           style={{
-            backgroundColor: selectedCollections.length === 0 ? '#666' : '#4CAF50',
+            backgroundColor: selectedCollections.length === 0 || !paletteTheme ? '#666' : '#4CAF50',
             border: 'none',
             borderRadius: '8px',
             color: '#ffffff',
-            cursor: selectedCollections.length === 0 ? 'not-allowed' : 'pointer',
+            cursor: selectedCollections.length === 0 || !paletteTheme ? 'not-allowed' : 'pointer',
             fontSize: '1.5rem',
             fontWeight: 'bold',
-            opacity: selectedCollections.length === 0 ? 0.5 : 1,
+            opacity: selectedCollections.length === 0 || !paletteTheme ? 0.5 : 1,
             padding: '1.5rem',
             transition: 'background-color 0.2s',
           }}
           onMouseEnter={(e) => {
-            if (selectedCollections.length > 0) {
+            if (selectedCollections.length > 0 && paletteTheme) {
               e.currentTarget.style.backgroundColor = '#45a049';
             }
           }}
           onMouseLeave={(e) => {
-            if (selectedCollections.length > 0) {
+            if (selectedCollections.length > 0 && paletteTheme) {
               e.currentTarget.style.backgroundColor = '#4CAF50';
             }
           }}
