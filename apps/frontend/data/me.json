@@ -4,18 +4,72 @@
     {
       "main": "Who am I?",
       "subs": [
-        "**Staff-level Frontend Architect** with nearly 20 years of experience building performant, user-focused web applications across startups, e-commerce, and analytics platforms.",
-        "**Led frontend architecture at Assured**, defining design systems, CI/CD pipelines, and developer tooling that scaled across multiple products and teams.",
-        "**Previously Principal Engineer at Moat (acquired by Oracle)**, where I drove frontend architecture for a high-traffic analytics dashboard used by global advertisers.",
-        "**Earlier e-commerce leadership at Paperless Post and J.Crew** — improving checkout, performance, and accessibility for millions of users.",
-        "**Hands-on with React, TypeScript, and modern tooling**, but equally focused on developer experience, design systems, and collaboration with product and design to ship fast, maintainable frontends."
+        "**Senior-to-Staff-level Frontend Engineer** with nearly 20 years of experience building and scaling complex web applications across insurtech, analytics, and e-commerce.",
+        "**Led frontend architecture at Assured**, designing component libraries, CI/CD systems, and developer tooling adopted across multiple teams and products.",
+        "**Previously Principal Engineer at Moat (acquired by Oracle)**, shaping frontend architecture for a high-traffic analytics platform serving global advertisers.",
+        "Earlier experience at **Paperless Post** and **J.Crew**, improving checkout, performance, and accessibility for millions of customers.",
+        "**Core stack:** React, TypeScript, GraphQL, Node.js, and CI/CD automation — with a focus on developer experience, design systems, and cross-functional collaboration."
       ]
     },
     {
       "main": "Short and Sweet",
       "subs": [
-        "I’m a frontend architect who thrives at the intersection of design systems, performance, and developer experience — building frameworks that let teams ship great products at scale."
+        "I’m a **hands-on frontend engineer** who thrives at the intersection of **design systems, performance, and developer experience** — building frameworks that help teams ship fast, reliable products."
       ]
+    },
+    {
+      "main": "Pitch – Staff / Architect Focused",
+      "subs": [
+        "I’ve been building for the web for about 18 years, mainly focused on frontend systems and developer experience.",
+        "At Assured, I led projects like an org-wide E2E testing rollout, a reusable component library with Storybook and Chromatic, and a real-time photo capture tool using in-browser ML — that last one became a company-wide differentiator.",
+        "I work best at the crossroads of engineering and product — translating ambiguity into scalable, maintainable systems teams actually enjoy using.",
+        "Right now I’m looking for a hands-on role where I can keep shipping, mentor others, and improve team velocity through thoughtful architecture and tooling."
+      ]
+    },
+    {
+      "main": "Pitch – Senior IC Focused",
+      "subs": [
+        "I’m a senior frontend engineer with deep experience in React, TypeScript, and performance-focused architecture.",
+        "Recently I worked on everything from design systems and analytics dashboards to a browser-based photo capture app using real-time object detection — probably my most rewarding project.",
+        "What I enjoy most is taking loosely defined problems and turning them into elegant, maintainable products that ship quickly.",
+        "I’m looking for a collaborative team where I can contribute right away, share knowledge, and keep growing through meaningful product work."
+      ]
+    },
+    {
+      "main": "Pitch – Oracle IC5 Alignment",
+      "subs": [
+        "I’ve spent most of my career leading the design and delivery of large-scale frontend systems. At Assured, I built the real-time Guided Photo Capture product — a browser-based ML experience used by tens of thousands monthly — and rolled out a company-wide Playwright testing framework that improved release reliability by about 40%.",
+        "At Moat, I helped evolve a high-traffic analytics dashboard to support global advertisers with low-latency performance and modernized tooling.",
+        "I bring a **blend of architectural depth and practical product focus** — someone who codes daily, mentors developers, and helps teams make high-impact technical decisions.",
+        "What excites me about Oracle Health is the mission: using **modern web technologies and AI to make complex systems intuitive**, exactly the kind of challenge I’ve thrived on throughout my career."
+      ]
+    },
+    {
+      "main": "Pitch – 30-Second Version",
+      "subs": [
+        "I’m a senior principal-level frontend engineer with deep experience in React, TypeScript, and UI architecture for complex products.",
+        "I’ve led efforts ranging from ML-powered browser applications to component libraries and testing pipelines adopted company-wide.",
+        "I’m hands-on, collaborative, and motivated by building interfaces that improve real-world outcomes — especially in meaningful domains like healthcare."
+      ]
+    },
+    {
+      "main": "Quick 20-Second Version",
+      "subs": [
+        "I’m a senior-level frontend engineer specializing in React and TypeScript.",
+        "I’ve led architecture for analytics and ML-driven web apps, focusing on accessibility, performance, and developer experience.",
+        "I’m excited by Oracle Health’s mission to make healthcare software more human-centered through great design and engineering."
+      ]
+    },
+    {
+      "main": "What did you do at Assured?",
+      "subs": [
+        "At Assured, I joined early to help define the frontend architecture for our core insurance platform — everything from developer tooling to user-facing products.",
+        "I led projects that modernized the company’s entire web stack: a design system built with Storybook and Chromatic, a cross-team E2E testing framework with Playwright, and a real-time Guided Photo Capture product that used in-browser ML to guide users through damage photo submissions.",
+        "That last project became a major differentiator and contributed to landing one of Assured’s largest enterprise contracts. It also led to my promotion to Frontend Architect within six months.",
+        "Beyond building systems, I collaborated closely with design, backend, and product teams to improve developer experience, establish CI/CD best practices, and promote consistent, scalable UI patterns across the organization.",
+        "In short — I helped move the company from scrappy product delivery to a more mature, predictable engineering culture, while still staying deeply hands-on in the codebase."
+      ],
+      "tags": ["frontend architecture", "developer experience", "leadership", "ML", "collaboration"]
     }
   ]
 }
