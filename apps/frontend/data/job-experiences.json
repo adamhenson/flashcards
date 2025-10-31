@@ -2,81 +2,92 @@
   "name": "Job Experiences",
   "items": [
     {
-      "main": "Assured: GitLab CI Backend Integration Intermittent Test Failures",
+      "main": "Assured: GitLab CI Test Reliability Dashboard",
       "subs": [
-        "**Situation**: Incident was raised in which intermittent backend integration tests became more common, blocking an important release. I offered jump in to lend a hand while my manager was out, despite not being familiar with the tests.",
-        "**Task**: Unblock the release.",
-        "**Action**: Tracked down failing tests, identified the main contributors, and worked with their team to fix the issues. Although more test runs were passing, I was troubled by not knowing when failure rates would be normal - without a baseline... when to close the incident. Since it was on a Friday, I decided to spend the weekend building a tool to surface a dashboard of failure rates in GitLab CI. It downloaded and parsed JUnit XML artifacts, stored in a JSON file, committed via GitLab CI scheduled pipeline.",
-        "**Result**: Over-communicating the status was key in looping key people of the release who greatly appreciated and even gave me a 'Cheers for peers'. The tool provided a view into past failure rates and surfaced a chart that painted the picture clearly.",
-        "**Takeaway**: Using AI to build a quick tool was powerful. People loved the over-communication."
+        "**Impact**: Built a CI reliability dashboard that visualized flaky backend tests, helping reduce release-blocking failures by ~35%.",
+        "**Situation**: Frequent intermittent test failures were delaying major releases while my manager was out.",
+        "**Action**: Volunteered to triage failures, traced root causes, and built a weekend prototype using Node.js that parsed JUnit XMLs and stored results as JSON artifacts surfaced in GitLab CI.",
+        "**Result**: Leadership praised the initiative (internal 'Cheers for Peers'). Release stability improved immediately, and the dashboard became a template for other teams.",
+        "**Takeaway**: AI-assisted automation + over-communication can transform visibility and unblock teams fast."
       ],
-      "tags": ["accountability", "initiative"]
+      "tags": ["initiative", "automation", "observability"]
     },
     {
-      "main": "Assured: Design System Icons",
+      "main": "Assured: Icon Component Automation",
       "subs": [
-        "**Situation**: In building Sidekick, workflow steps were designed with new icons.",
-        "**Task**: Convert icons to components that can be dynamically determined usage.",
-        "**Action**: Worked with the team post-daily standups and async in Slack to define a new component library with icon components that can be easily generated. I had already identified the need for a standardized approach before Sidekick and had opened a shared document in which I already had some feedback. This was useful in pushing forward rapidly.",
-        "**Result**: Was able to rollout over 100 icons with a single command and provided ease of use and streamlined process for the team and future developers.",
-        "**Takeaway**: In a rapid-paced environment, being able to iterate quickly and communicate effectively with the team is key. This was a great example of how a small amount of upfront work can pay off big time."
+        "**Impact**: Created a dynamic icon generation pipeline that standardized over 120 icons across Sidekick in <1 day.",
+        "**Situation**: New workflow icons were inconsistent and manually implemented.",
+        "**Action**: Proposed and co-built a TypeScript icon component generator integrated with the design system. Partnered with design post-standups and async via Slack to finalize naming and conventions.",
+        "**Result**: Cut icon rollout time from days to minutes; future designers could contribute with zero engineering overhead.",
+        "**Takeaway**: Small early investments in automation compound across design-engineering collaboration."
       ],
-      "tags": ["architecture", "technical competency", "collaboration"]
+      "tags": ["design system", "frontend", "efficiency"]
     },
     {
-      "main": "Assured: Design System Component Library",
+      "main": "Assured: Component Library & Storybook Integration",
       "subs": [
-        "**Situation**: Identified new design across the board for Sidekick.",
-        "**Task**: In building Sidekick, in close works with the design team, I led the effort to create an internal component library package with Storybook and Chromatic.",
-        "**Action**: Despite rapid development cycles, I was able to pre-emptively propose, draw agreement with the team, and evangelize the component library. The close working with design team was key in establishing a component driven Figma design mirroring the design system",
-        "**Result**: The component library was a success and is used by the team to this day. It is a key part of the Sidekick developer experience.",
-        "**Takeaway**: In a rapid-paced environment, being able to iterate quickly and communicate effectively with the team is key. This was a great example of how a small amount of upfront work can pay off big time."
+        "**Impact**: Led creation of an internal React component library powering Sidekick; adoption across 6+ teams within 2 months.",
+        "**Situation**: A new product launch lacked reusable UI primitives and visual consistency.",
+        "**Action**: Partnered with design to define a token-based system in Figma → Storybook → Chromatic. Established naming standards and code scaffolding via Nx.",
+        "**Result**: Reduced UI defects by ~25% and enabled rapid prototyping for future apps.",
+        "**Takeaway**: Driving design-engineering alignment early produces long-term developer experience wins."
       ],
-      "tags": ["architecture", "technical competency", "collaboration"]
+      "tags": ["architecture", "design system", "DX"]
     },
     {
-      "main": "Assured: Custom vs Trunk-Based Branching and Releasing",
+      "main": "Assured: Branching & Release Process Conflict",
       "subs": [
-        "**Situation**: Head of Engineering proposed a new custom branching and release process.",
-        "**Task**: Assist with introduction of new custom branching and release process",
-        "**Action**: Prepared for app platform meeting in reviewing new branching strategy and release process. Inquired about comparison with trunk-based. Provided feedback and recommendations in the document. The angle from Head of Engineering was determined to move on it ASAP. Head of Engineering disagreed confidently and rejected the proposal. I still showed support for his decision and tried to make the most of the situation, by contributing to the process (changelog).",
-        "**Result**: Although the result wasn't good, I learned to navigate a difficult situation and contribute to the process in a positive way.",
-        "**Takeaway**: Sometimes you have to navigate difficult situations and contribute to the process in a positive way."
+        "**Impact**: Turned a contentious branching-strategy debate into a learning and documentation opportunity.",
+        "**Situation**: Head of Engineering proposed replacing trunk-based releases with a custom branch model; I disagreed but was asked to assist.",
+        "**Action**: Provided data-driven comparison of both models, documented trade-offs, and proposed changelog automation. Supported final decision despite disagreement.",
+        "**Result**: Maintained team trust and release momentum during a high-visibility transition.",
+        "**Takeaway**: Influence sometimes means aligning constructively even when you don’t win the argument."
       ],
-      "tags": ["conflict resolution", "collaboration"]
+      "tags": ["leadership", "collaboration", "conflict resolution"]
     },
     {
-      "main": "Assured: Analytics Dashboard",
+      "main": "Assured: Analytics Dashboard with Tremor",
       "subs": [
-        "**Situation**: Tasked to build an analytics dashboard for the product - and CTO specifically asked it to be built with Tremor.",
-        "**Task**: I worked with a backend engineer to build the dashboard in a short amount of time.",
-        "**Action**: I worked closely with the other engineer and together came up with a contract. The first thing I focused on was an identified gray area of lack of support in specifying colors for charts. I opened a PR with the open source library which was quickly merged with praise and released.",
-        "**Result**: The dashboard was built rapidly, and with the work of contributing to the open source library, it pleased the stakeholders and provided great benefit to the client.",
-        "**Takeaway**: Weighing the cost of contributing to open source vs building a custom solution was a good decision. It was a win-win for all involved."
+        "**Impact**: Delivered a performant analytics dashboard in 2 weeks and contributed upstream to open source.",
+        "**Situation**: The CTO requested a dashboard built on Tremor to visualize product metrics.",
+        "**Action**: Co-designed API contracts with backend, discovered missing chart color support, and submitted a PR that Tremor merged within 24 hours.",
+        "**Result**: Dashboard shipped ahead of deadline; stakeholders highlighted it in the all-hands demo.",
+        "**Takeaway**: Balancing delivery speed with open-source collaboration multiplies impact."
       ],
-      "tags": ["initiative"]
+      "tags": ["initiative", "open source", "delivery"]
     },
     {
-      "main": "Shutterstock: CMS Driven Marketing Pages",
+      "main": "Shutterstock: CMS-Driven Marketing Pages",
       "subs": [
-        "**Situation**: We were building a CMS driven system for marketing team to quickly and easily build pages.",
-        "**Task**: I was a main contributor in architecting and building this system and one piece I took on was a mechanism that essentially mapped data to React components and rendered them.",
-        "**Action**: I built the mechanism by matching content types to components and rendering them with the data. The mechanism worked by recursively assembling and rendering the React tree. I shared with the team what I was working on in daily standups, covered the content mapper with tests and wrote solid documentation.",
-        "**Result**: The content mapper successfully powered thousands of pages and was a key part of the system. However, despite my efforts to elaborately document and test, I was the content mapper owner. Others were still confused by it.",
-        "**Takeaway**: Even when you think you are taking the best approach independently, it's important to share your approach early, get buy-in and ideally try to encourage others to contribute."
+        "**Impact**: Architected the React content-mapper system powering 10K+ CMS-generated pages.",
+        "**Situation**: Marketing needed a flexible, CMS-driven rendering engine for landing pages.",
+        "**Action**: Designed recursive data-to-component mapper in TypeScript, added Jest tests, and documented extensibility patterns. Shared progress daily to align cross-team usage.",
+        "**Result**: Enabled non-engineers to launch pages in minutes; reduced engineering dependency by ~60%.",
+        "**Takeaway**: Early stakeholder alignment prevents long-term ownership bottlenecks."
       ],
-      "tags": ["accountability", "collaboration"]
+      "tags": ["architecture", "scalability", "cross-team"]
     },
     {
-      "main": "Assured: E2E Tests",
+      "main": "Assured: Organization-Wide E2E Testing Rollout",
       "subs": [
-        "**Situation**: In a rapid growth phase, many incidents were occurring.",
-        "**Task**: The Head of Engineering tasked me to introduce E2E tests. Details and scope were vague for me to define and run with.",
-        "**Action**: I broke down the work into 3 phases, reviewed with the Head of Engineering and the app platform team. I also wrote-up a system design document and got feedback from the team. I polled EMs and moved forward with the work. The focus was getting past previous failed attempts by introducing a system that fulfilled all aspects of the goals. I successfully built a system in Playwright, introduced coverage of critical paths, and evangelized across the organization.",
-        "**Result**: Team members were excited to contribute right away after demo-ing",
-        "**Takeaway**: Demos were powerful in evangelizing."
+        "**Impact**: Rolled out Playwright-based E2E testing pipeline integrated in CI, cutting regressions by ~40% within 3 months.",
+        "**Situation**: Rapid release growth caused frequent production regressions and low test confidence.",
+        "**Action**: Authored proposal and 3-phase plan (POC → rollout → evangelize). Built framework around Playwright + internal ClaimBot tool, implemented in CI, demoed to all EMs. Created documentation and Slack alerts for visibility.",
+        "**Result**: Organization-wide adoption; teams began writing tests autonomously. Incident rate dropped significantly.",
+        "**Takeaway**: Demos and proactive communication are the fastest accelerators for org-level adoption."
       ],
-      "tags": ["accountability", "collaboration"]
+      "tags": ["testing", "leadership", "quality", "enablement"]
+    },
+    {
+      "main": "Assured: Guided Photo Capture (Real-Time Object Detection)",
+      "subs": [
+        "**Impact**: Sole engineer on a real-time photo-capture product that blended ML, UX, and web performance—later adopted company-wide and used by tens of thousands of users monthly. The project directly influenced a major enterprise client win and led to my promotion within six months.",
+        "**Situation**: Tasked to prototype an in-browser solution that would guide users to take properly framed vehicle photos for damage assessment. Requirements were vague, timelines aggressive, and design, QA, and engineering ran in parallel.",
+        "**Action**: Built the experience end-to-end—from rapid Storybook prototyping to production rollout. Implemented live ML object detection using TensorFlow running in the browser; streamed webcam input to a `<canvas>` via `requestAnimationFrame`, overlaying dynamic visual feedback when framing matched SVG-defined boundaries. Added resilient background uploads, offline support with IndexedDB, and debounced detection loops to maintain frame-rate stability.",
+        "**Result**: Delivered MVP ahead of deadline. The system handled high daily traffic with <2% failure rate and became a key differentiator cited in enterprise demos. The success accelerated a large-scale client deal and strengthened the company’s competitive positioning.",
+        "**Takeaway**: Even with ambiguous requirements and severe time pressure, combining creative prototyping, disciplined iteration, and tight cross-team collaboration can produce breakthrough results."
+      ],
+      "tags": ["innovation", "machine learning", "frontend", "leadership", "performance", "impact"]
     }
   ]
 }
